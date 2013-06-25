@@ -1,0 +1,4 @@
+#!/bin/sh
+
+javah -verbose -classpath ../../../src net.bitmovin.libdash.DASHManager net.bitmovin.libdash.mpd.MPD
+
