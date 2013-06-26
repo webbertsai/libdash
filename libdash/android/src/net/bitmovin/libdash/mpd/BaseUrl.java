@@ -1,0 +1,34 @@
+package net.bitmovin.libdash.mpd;
+
+import java.util.Vector;
+
+import net.bitmovin.libdash.AbstractMPDElement;
+
+public class BaseUrl extends AbstractMPDElement implements IBaseUrl {
+
+	public BaseUrl() {
+	}
+
+	public BaseUrl(long cppThis) {
+		super(cppThis);
+	}
+
+	@Override
+	public native String GetUrl();
+
+	@Override
+	public native String GetServiceLocation();
+
+	@Override
+	public native String GetByteRange();
+
+	@Override
+	public native ISegment ToMediaSegment(Vector<IBaseUrl> baseurls);
+
+	@Override
+	protected native long initialiseCppClass();
+
+	@Override
+	protected native void destoryCppClass();
+	
+}
