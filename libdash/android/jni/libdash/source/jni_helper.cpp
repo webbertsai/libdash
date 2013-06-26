@@ -21,4 +21,18 @@ jstring jni_helper::convertStdStringToJString(JNIEnv *env, const std::string &to
 }
 
 
+void jni_helper::createJavaArrayList(JNIEnv *env, jclass *resultClass, jobject *resultObject)
+{
+    jclass clazz_vector = env->FindClass("java/util/ArrayList");
+    jobject obj_vector = env->NewObject(clazz_vector, env->GetMethodID(clazz_vector, "<init>", "()V"));
+    if (resultClass != 0)
+    {
+        *resultClass = clazz_vector;
+    }
+    if (resultObject != 0)
+    {
+        *resultObject = obj_vector;
+    }
+}
+
 

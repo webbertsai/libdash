@@ -3,6 +3,7 @@
 
 #include <jni.h>
 #include <string>
+#include <vector>
 
 
 
@@ -14,6 +15,7 @@ namespace jni_helper
 jstring createJString(JNIEnv *env, const char* cStr);
 std::string convertJStringToStdString(JNIEnv *env, jstring &toCast);
 jstring convertStdStringToJString(JNIEnv *env, const std::string &toCast);
+void createJavaArrayList(JNIEnv *env, jclass *resultClass, jobject *resultObject);
 
 
 template <class classType>
@@ -72,8 +74,48 @@ void destroyInstance(JNIEnv *env, jobject &obj)
     env->SetLongField(obj, fid, 0);
 }
 
+template <class classType>
+jobject convertCppInstanceToJObject(JNIEnv *env, classType *toCast, const char *javaClass, jclass *resultClass = 0)
+{
+    jlong workJLong = jni_helper::convertPtrToJLong(toCast);
 
+    jclass clazz_cast = env->FindClass(javaClass);
+    jobject object_cast = env->NewObject(clazz_cast, env->GetMethodID(clazz_cast, "<init>", "(J)V"), workJLong);
+
+    if (resultClass != 0)
+    {
+        *resultClass = clazz_cast;
+    }
+    return object_cast;
 }
+
+template <typename addType>
+void addToJavaArrayList(JNIEnv *env, const jclass &vector_class, const jobject &vector_obj, addType toAdd)
+{
+    env->CallBooleanMethod(vector_obj, env->GetMethodID(vector_class, "add", "(Ljava/lang/Object;)Z"), toAdd);\
+}
+
+template <class toCastToType>
+std::vector<toCastToType*> convertJArrayListToStdVector(JNIEnv *env, jobject toCast)
+{
+    typedef std::vector<toCastToType*> t_vector;
+    t_vector result;
+
+    jclass clazz_vector = env->GetObjectClass(toCast);
+    jint size = env->CallIntMethod(toCast, env->GetMethodID(clazz_vector, "size", "()I"));
+    int sizeCast = size;
+    for (int ind = 0; ind < sizeCast; ++ind)
+    {
+        jobject work = env->CallObjectMethod(toCast, env->GetMethodID(clazz_vector, "get", "()Ljava/lang/Object;"));
+        toCastToType *workCasted(getClassPtr<toCastToType>(env, work));
+        result.push_back(workCasted);
+    }
+    return result;
+}
+
+
+} // jni_helper
+
 
 #define CALL_INITIALISECPPCLASS(prefix) jlong prefix##initialiseCppClass(JNIEnv *, jobject) \
 {\
@@ -111,8 +153,9 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
 
 #define CALL_METHOD_RETURN_STRINGVECTOR(prefix, method) jobject prefix##method(JNIEnv *env, jobject obj) \
 {   \
-    jclass clazz_vector = env->FindClass("java/util/ArrayList");  \
-    jobject result = env->NewObject(clazz_vector, env->GetMethodID(clazz_vector, "<init>", "()V"));\
+    jclass clazz_vector;\
+    jobject result;\
+    jni_helper::createJavaArrayList(env, &clazz_vector, &result); \
 \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
     if (classPtr == 0)\
@@ -130,7 +173,7 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
         const std::string &work(*it);\
         jstring workCasted = jni_helper::convertStdStringToJString(env, work);\
 \
-        env->CallBooleanMethod(result, env->GetMethodID(clazz_vector, "add", "(Ljava/lang/Object;)Z"), workCasted);\
+        jni_helper::addToJavaArrayList(env, clazz_vector, result, workCasted); \
     }\
 \
     return result;\
@@ -139,8 +182,9 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
 
 #define CALL_METHOD_RETURN_OBJECTPTRVECTOR(prefix, method, cppClassType, javaClassType) jobject prefix##method(JNIEnv *env, jobject obj) \
 {   \
-    jclass clazz_vector = env->FindClass("java/util/ArrayList");  \
-    jobject result = env->NewObject(clazz_vector, env->GetMethodID(clazz_vector, "<init>", "()V"));\
+    jclass clazz_vector;\
+    jobject result;\
+    jni_helper::createJavaArrayList(env, &clazz_vector, &result); \
 \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
     if (classPtr == 0)\
@@ -153,12 +197,9 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
     for (t_vector::const_iterator it = toCast.begin(); it != toCast.end(); ++it)\
     {\
         cppClassType* work(*it); \
-        jlong workJLong = jni_helper::convertPtrToJLong(work); \
-\
-        jclass clazz_cast = env->FindClass(javaClassType);  \
-        jobject object_cast = env->NewObject(clazz_cast, env->GetMethodID(clazz_cast, "<init>", "(J)V"), workJLong);\
-\
-        env->CallBooleanMethod(result, env->GetMethodID(clazz_vector, "add", "(Ljava/lang/Object;)Z"), object_cast);\
+        jobject object_cast = jni_helper::convertCppInstanceToJObject(env, work, javaClassType, 0); \
+    \
+        jni_helper::addToJavaArrayList(env, clazz_vector, result, object_cast); \
     }\
 \
     return result;\
@@ -172,10 +213,7 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
         return 0;\
     }\
     const cppClassType *toCast(classPtr->method());\
-    jlong workJLong = jni_helper::convertPtrToJLong(toCast); \
-\
-    jclass clazz_cast = env->FindClass(javaClassType);  \
-    jobject object_cast = env->NewObject(clazz_cast, env->GetMethodID(clazz_cast, "<init>", "(J)V"), workJLong);\
+    jobject object_cast = jni_helper::convertCppInstanceToJObject(env, toCast, javaClassType, 0); \
 \
     return object_cast;\
 }
