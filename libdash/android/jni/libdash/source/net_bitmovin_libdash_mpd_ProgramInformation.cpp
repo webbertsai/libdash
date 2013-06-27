@@ -1,0 +1,29 @@
+#include "net_bitmovin_libdash_mpd_ProgramInformation.h"
+
+#include "mpd/ProgramInformation.h"
+
+#ifdef LOCAL_CLASS
+#   error local class already set
+#else
+#   define LOCAL_CLASS dash::mpd::ProgramInformation
+#endif
+
+#include "jni_helper.hpp"
+
+#define CALL_METHOD_RETURN_STRING_PREFIX(method) CALL_METHOD_RETURN_STRING(Java_net_bitmovin_libdash_mpd_ProgramInformation_, method)
+#define CALL_METHOD_STRING_RETURN_VOID_PREFIX(method) CALL_METHOD_STRING_RETURN_VOID(Java_net_bitmovin_libdash_mpd_ProgramInformation_, method)
+
+CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_mpd_ProgramInformation_)
+CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_mpd_ProgramInformation_)
+
+CALL_METHOD_RETURN_STRING_PREFIX(GetTitle)
+CALL_METHOD_RETURN_STRING_PREFIX(GetSource)
+CALL_METHOD_RETURN_STRING_PREFIX(GetCopyright)
+CALL_METHOD_RETURN_STRING_PREFIX(GetLang)
+CALL_METHOD_RETURN_STRING_PREFIX(GetMoreInformationURL)
+
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetTitle)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetSource)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetCopyright)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetLang)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetMoreInformationURL)
