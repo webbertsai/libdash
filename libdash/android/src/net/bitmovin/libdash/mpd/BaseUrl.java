@@ -30,4 +30,8 @@ public class BaseUrl extends AbstractMPDElement implements IBaseUrl {
 	@Override
 	protected native void destoryCppClass();
 	
+	public native void    SetUrl              (String url);
+	public native void    SetServiceLocation  (String serviceLocation);
+	public native void    SetByteRange        (String byteRange);
+	
 }

@@ -11,6 +11,7 @@
 #include "jni_helper.hpp"
 
 #define CALL_METHOD_RETURN_STRING_PREFIX(method) CALL_METHOD_RETURN_STRING(Java_net_bitmovin_libdash_mpd_BaseUrl_, method)
+#define CALL_METHOD_STRING_RETURN_VOID_PREFIX(method) CALL_METHOD_STRING_RETURN_VOID(Java_net_bitmovin_libdash_mpd_BaseUrl_, method)
 
 CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_mpd_BaseUrl_)
 CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_mpd_BaseUrl_)
@@ -27,4 +28,9 @@ jobject Java_net_bitmovin_libdash_mpd_BaseUrl_ToMediaSegment(JNIEnv *env, jobjec
     dash::mpd::ISegment* result(thiz->ToMediaSegment(castResult));
     return jni_helper::convertCppInstanceToJObject(env, result, "net/bitmovin/libdash/mpd/Segment", 0);
 }
+
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetUrl)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetServiceLocation)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetByteRange)
+
 

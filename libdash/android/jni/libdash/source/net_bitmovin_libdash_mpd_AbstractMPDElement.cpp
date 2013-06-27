@@ -39,3 +39,46 @@ jobject Java_net_bitmovin_libdash_mpd_AbstractMPDElement_GetRawAttributes(JNIEnv
     return map_obj;
 }
 
+CALL_METHOD_OBJECT_RETURN_VOID(Java_net_bitmovin_libdash_mpd_AbstractMPDElement_, AddAdditionalSubNode, dash::xml::INode)
+
+
+void Java_net_bitmovin_libdash_mpd_AbstractMPDElement_AddRawAttributesNative(JNIEnv *env, jobject obj, jobjectArray keys, jobjectArray values)
+{
+    /*std::map<std::string, std::string> cast;
+
+    jclass clazz_map = env->GetObjectClass(attributes);
+
+    jobject keySet = env->CallObjectMethod(attributes, env->GetMethodID(clazz_map, "keySet", "()Ljava.util.Set;"));
+    jobjectArray keySetArray = env->CallObjectMethod(keySet, env->GetMethodID(env->GetObjectClass(keySet), "toArray", "()[Ljava.lang.Object;"));
+
+    jsize num = env->GetArrayLength(JNIEnv *, keySetArray);
+    for (jsize ind = 0; ind < num; ++ind)
+    {
+        jstring key = env->GetObjectArrayElement(keySetArray, ind);
+
+        jstring value = env->CallObjectMethod(attributes, env->GetMethodID(clazz_map, "value", "(Ljava.lang.Object;)Ljava.lang.Object;"), key);
+
+        std::string keyCasted = jni_helper::convertJStringToStdString(env, key);
+        std::string valueCasted = jni_helper::convertJStringToStdString(env, value);
+
+        cast[keyCasted] = valueCasted;
+    }
+
+    jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)->AddRawAttributes(cast);*/
+
+    std::map<std::string, std::string> cast;
+
+    /*jsize num = env->GetArrayLength(keys);
+    for (jsize ind = 0; ind < num; ++ind)
+    {
+        jobject key = env->GetObjectArrayElement(keys, ind);
+        jobject value = env->GetObjectArrayElement(values, ind);
+
+        std::string keyCasted = jni_helper::convertJStringToStdString(env, key);
+        std::string valueCasted = jni_helper::convertJStringToStdString(env, value);
+
+        cast[keyCasted] = valueCasted;
+    }*/
+
+    jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)->AddRawAttributes(cast);
+}

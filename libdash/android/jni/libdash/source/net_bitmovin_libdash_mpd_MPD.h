@@ -191,6 +191,174 @@ JNIEXPORT jlong JNICALL Java_net_bitmovin_libdash_mpd_MPD_initialiseCppClass
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_destoryCppClass
   (JNIEnv *, jobject);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddTCPConnection
+ * Signature: (Lnet/bitmovin/libdash/metrics/TCPConnection;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddTCPConnection
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddHTTPTransaction
+ * Signature: (Lnet/bitmovin/libdash/metrics/HTTPTransaction;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddHTTPTransaction
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddProgramInformation
+ * Signature: (Lnet/bitmovin/libdash/mpd/ProgramInformation;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddProgramInformation
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddBaseUrl
+ * Signature: (Lnet/bitmovin/libdash/mpd/BaseUrl;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddBaseUrl
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddLocation
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddLocation
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddPeriod
+ * Signature: (Lnet/bitmovin/libdash/mpd/Period;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddPeriod
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    AddMetrics
+ * Signature: (Lnet/bitmovin/libdash/mpd/Metrics;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_AddMetrics
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetId
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetId
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetProfiles
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetProfiles
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetType
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetType
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetAvailabilityStarttime
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetAvailabilityStarttime
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetAvailabilityEndtime
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetAvailabilityEndtime
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetMediaPresentationDuration
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMediaPresentationDuration
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetMinimumUpdatePeriod
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMinimumUpdatePeriod
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetMinBufferTime
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMinBufferTime
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetTimeShiftBufferDepth
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetTimeShiftBufferDepth
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetSuggestedPresentationDelay
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetSuggestedPresentationDelay
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetMaxSegmentDuration
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMaxSegmentDuration
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetMaxSubsegmentDuration
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMaxSubsegmentDuration
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetMPDPathBaseUrl
+ * Signature: (Lnet/bitmovin/libdash/mpd/BaseUrl;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMPDPathBaseUrl
+  (JNIEnv *, jobject, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    SetFetchTime
+ * Signature: (I)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetFetchTime
+  (JNIEnv *, jobject, jint);
+
 #ifdef __cplusplus
 }
 #endif

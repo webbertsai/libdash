@@ -1,6 +1,6 @@
 #!/bin/sh
 
-javah -verbose -classpath ../../../src net.bitmovin.libdash.DASHManager net.bitmovin.libdash.mpd.MPD net.bitmovin.libdash.mpd.BaseUrl  net.bitmovin.libdash.mpd.AbstractMPDElement
+javah -verbose -classpath ../../../src net.bitmovin.libdash.DASHManager net.bitmovin.libdash.mpd.MPD net.bitmovin.libdash.mpd.BaseUrl  net.bitmovin.libdash.mpd.AbstractMPDElement net.bitmovin.libdash.mpd.ProgramInformation net.bitmovin.libdash.mpd.Descriptor net.bitmovin.libdash.mpd.RepresentationBase net.bitmovin.libdash.mpd.URLType net.bitmovin.libdash.mpd.SegmentBase
 javah -verbose -classpath ../../../src net.bitmovin.libdash.metrics.HTTPTransaction net.bitmovin.libdash.metrics.TCPConnection net.bitmovin.libdash.metrics.ThroughputMeasurement
 javah -verbose -classpath ../../../src net.bitmovin.libdash.network.AbstractChunk net.bitmovin.libdash.network.DownloadStateManager
 javah -verbose -classpath ../../../src net.bitmovin.libdash.xml.DOMHelper net.bitmovin.libdash.xml.Node net.bitmovin.libdash.xml.DOMParser

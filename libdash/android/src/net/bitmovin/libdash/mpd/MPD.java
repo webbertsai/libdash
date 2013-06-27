@@ -2,8 +2,10 @@ package net.bitmovin.libdash.mpd;
 
 import java.util.ArrayList;
 
+import net.bitmovin.libdash.metrics.HTTPTransaction;
 import net.bitmovin.libdash.metrics.IHTTPTransaction;
 import net.bitmovin.libdash.metrics.ITCPConnection;
+import net.bitmovin.libdash.metrics.TCPConnection;
 
 public class MPD extends AbstractMPDElement implements IMPD {
 
@@ -82,4 +84,27 @@ public class MPD extends AbstractMPDElement implements IMPD {
 	
 	@Override
 	protected native void destoryCppClass();
+	
+	protected native void    AddTCPConnection        		 (TCPConnection tcpConn);
+	protected native void    AddHTTPTransaction      		 (HTTPTransaction httpTransAct);
+
+	protected native void    AddProgramInformation           (ProgramInformation programInformation);
+	protected native void    AddBaseUrl                      (BaseUrl url);
+	protected native void    AddLocation                     (String location);
+	protected native void    AddPeriod                       (Period period);
+	protected native void    AddMetrics                      (Metrics metrics);
+	protected native void    SetId                           (String id);
+	protected native void    SetProfiles                     (String profiles);
+	protected native void    SetType                         (String type);
+	protected native void    SetAvailabilityStarttime        (String availabilityStarttime);
+	protected native void    SetAvailabilityEndtime          (String availabilityEndtime);
+	protected native void    SetMediaPresentationDuration    (String mediaPresentationDuration);
+	protected native void    SetMinimumUpdatePeriod          (String minimumUpdatePeriod);
+	protected native void    SetMinBufferTime                (String minBufferTime);
+	protected native void    SetTimeShiftBufferDepth         (String timeShiftBufferDepth);
+	protected native void    SetSuggestedPresentationDelay   (String suggestedPresentationDelay);
+	protected native void    SetMaxSegmentDuration           (String maxSegmentDuration);
+	protected native void    SetMaxSubsegmentDuration        (String maxSubsegmentDuration);
+	protected native void    SetMPDPathBaseUrl               (BaseUrl path);
+	protected native void    SetFetchTime                    (int fetchTimeInSec);
 }

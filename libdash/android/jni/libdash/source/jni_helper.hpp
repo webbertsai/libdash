@@ -250,6 +250,28 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
     return result; \
 }
 
+#define CALL_METHOD_RETURN_BYTE(prefix, method) jbyte prefix##method(JNIEnv *env, jobject obj) \
+{ \
+    LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
+    if (classPtr == 0) \
+    { \
+        return -1; \
+    } \
+    const uint8_t& result(classPtr->method()); \
+    return result; \
+}
+
+#define CALL_METHOD_RETURN_DOUBLE(prefix, method) jdouble prefix##method(JNIEnv *env, jobject obj) \
+{ \
+    LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
+    if (classPtr == 0) \
+    { \
+        return -1; \
+    } \
+    const double& result(classPtr->method()); \
+    return result; \
+}
+
 #define CALL_METHOD_RETURN_STRINGVECTOR(prefix, method) jobject prefix##method(JNIEnv *env, jobject obj) \
 {   \
     jclass clazz_vector;\

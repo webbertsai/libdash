@@ -55,6 +55,30 @@ JNIEXPORT jlong JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_initialiseCppClass
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_destoryCppClass
   (JNIEnv *, jobject);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_BaseUrl
+ * Method:    SetUrl
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_SetUrl
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_BaseUrl
+ * Method:    SetServiceLocation
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_SetServiceLocation
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_BaseUrl
+ * Method:    SetByteRange
+ * Signature: (Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_SetByteRange
+  (JNIEnv *, jobject, jstring);
+
 #ifdef __cplusplus
 }
 #endif
