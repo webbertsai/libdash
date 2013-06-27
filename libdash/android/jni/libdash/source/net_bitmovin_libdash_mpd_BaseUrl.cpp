@@ -28,4 +28,3 @@ jobject Java_net_bitmovin_libdash_mpd_BaseUrl_ToMediaSegment(JNIEnv *env, jobjec
     return jni_helper::convertCppInstanceToJObject(env, result, "net/bitmovin/libdash/mpd/Segment", 0);
 }
 
-// TODO: Java_net_bitmovin_libdash_mpd_BaseUrl_ToMediaSegment

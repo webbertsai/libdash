@@ -2,7 +2,6 @@ package net.bitmovin.libdash.mpd;
 
 import java.util.ArrayList;
 
-import net.bitmovin.libdash.AbstractMPDElement;
 import net.bitmovin.libdash.metrics.IHTTPTransaction;
 import net.bitmovin.libdash.metrics.ITCPConnection;
 

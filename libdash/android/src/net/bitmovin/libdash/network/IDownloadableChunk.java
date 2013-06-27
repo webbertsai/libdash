@@ -4,8 +4,8 @@ public interface IDownloadableChunk extends IChunk, net.bitmovin.libdash.metrics
 	boolean	StartDownload       	();
     boolean	StartDownload        	(IConnection connection);
     void    AbortDownload           ();
-    int     Read                    (byte [] data, int len);
-    int     Peek                    (byte [] data, int len);
+    byte[]  Read                 	(int len);
+    byte[]  Peek                    (int len);
     void    AttachDownloadObserver  (IDownloadObserver observer);
     void    DetachDownloadObserver  (IDownloadObserver observer);
 }

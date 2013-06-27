@@ -2,7 +2,6 @@ package net.bitmovin.libdash.mpd;
 
 import java.util.Vector;
 
-import net.bitmovin.libdash.AbstractMPDElement;
 
 public class BaseUrl extends AbstractMPDElement implements IBaseUrl {
 

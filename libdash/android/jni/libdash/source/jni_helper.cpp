@@ -36,3 +36,25 @@ void jni_helper::createJavaArrayList(JNIEnv *env, jclass *resultClass, jobject *
 }
 
 
+void jni_helper::createJavaMap(JNIEnv *env, jclass *resultClass, jobject *resultObject)
+{
+    jclass clazz_map = env->FindClass("java/util/TreeMap");
+    jobject obj_map = env->NewObject(clazz_map, env->GetMethodID(clazz_map, "<init>", "()V"));
+    if (resultClass != 0)
+    {
+        *resultClass = clazz_map;
+    }
+    if (resultObject != 0)
+    {
+        *resultObject = obj_map;
+    }
+}
+
+
+int jni_helper::convertJEnumToInt(JNIEnv *env, jobject &toCastEnum)
+{
+    jclass clazz = env->GetObjectClass(toCastEnum);
+    jint enumOridinal = env->CallIntMethod(toCastEnum, env->GetMethodID(clazz, "ordinal", "()I"));
+    int enumCast = enumOridinal; \
+    return enumCast;
+}
