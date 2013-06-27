@@ -1,0 +1,33 @@
+#include "net_bitmovin_libdash_metrics_ThroughputMeasurement.h"
+
+#include "metrics/ThroughputMeasurement.h"
+
+#ifdef LOCAL_CLASS
+#   error local class already set
+#else
+#   define LOCAL_CLASS dash::metrics::ThroughputMeasurement
+#endif
+
+#include "jni_helper.hpp"
+
+#define CALL_METHOD_RETURN_STRING_PREFIX(method) CALL_METHOD_RETURN_STRING(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method)
+#define CALL_METHOD_RETURN_INT_PREFIX(method) CALL_METHOD_RETURN_INT(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method)
+#define CALL_METHOD_RETURN_LONG_PREFIX(method) CALL_METHOD_RETURN_LONG(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method)
+#define CALL_METHOD_RETURN_OBJECTPTRVECTOR_PREFIX(method, cppClassType, javaClassType) CALL_METHOD_RETURN_OBJECTPTRVECTOR(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method, cppClassType, javaClassType)
+#define CALL_METHOD_RETURN_INTVECTOR_PREFIX(method, cppNativeType) CALL_METHOD_RETURN_INTVECTOR(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method, cppNativeType)
+#define CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(method, cppNumberType, javaNumberType) CALL_METHOD_NUMBER_RETURN_VOID(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method, cppNumberType, javaNumberType)
+#define CALL_METHOD_STRING_RETURN_VOID_PREFIX(method) CALL_METHOD_STRING_RETURN_VOID(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_, method)
+
+CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_)
+CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_metrics_ThroughputMeasurement_)
+
+CALL_METHOD_RETURN_STRING_PREFIX(StartOfPeriod)
+
+CALL_METHOD_RETURN_LONG_PREFIX(DurationOfPeriod)
+
+CALL_METHOD_RETURN_INTVECTOR_PREFIX(ReceivedBytesPerTrace, uint32_t)
+
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetStartOfPeriod)
+
+CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(SetDurationOfPeriod, uint64_t, jlong)
+CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(AddReceivedBytes, uint32_t, jint)

@@ -1,0 +1,35 @@
+#include "net_bitmovin_libdash_metrics_TCPConnection.h"
+
+#include "metrics/TCPConnection.h"
+
+#ifdef LOCAL_CLASS
+#   error local class already set
+#else
+#   define LOCAL_CLASS dash::metrics::TCPConnection
+#endif
+
+#include "jni_helper.hpp"
+
+#define CALL_METHOD_RETURN_STRING_PREFIX(method) CALL_METHOD_RETURN_STRING(Java_net_bitmovin_libdash_metrics_TCPConnection_, method)
+#define CALL_METHOD_RETURN_INT_PREFIX(method) CALL_METHOD_RETURN_INT(Java_net_bitmovin_libdash_metrics_TCPConnection_, method)
+#define CALL_METHOD_RETURN_LONG_PREFIX(method) CALL_METHOD_RETURN_LONG(Java_net_bitmovin_libdash_metrics_TCPConnection_, method)
+#define CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(method, cppNumberType, javaNumberType) CALL_METHOD_NUMBER_RETURN_VOID(Java_net_bitmovin_libdash_metrics_TCPConnection_, method, cppNumberType, javaNumberType)
+#define CALL_METHOD_STRING_RETURN_VOID_PREFIX(method) CALL_METHOD_STRING_RETURN_VOID(Java_net_bitmovin_libdash_metrics_TCPConnection_, method)
+
+CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_metrics_TCPConnection_)
+CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_metrics_TCPConnection_)
+
+CALL_METHOD_RETURN_INT_PREFIX(TCPId)
+
+CALL_METHOD_RETURN_STRING_PREFIX(DestinationAddress)
+CALL_METHOD_RETURN_STRING_PREFIX(ConnectionOpenedTime)
+CALL_METHOD_RETURN_STRING_PREFIX(ConnectionClosedTime)
+
+CALL_METHOD_RETURN_LONG_PREFIX(ConnectionTime)
+
+CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(SetTCPId, uint32_t, jint)
+CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(SetTCPId, uint64_t, jlong)
+
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetDestinationAddress)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetConnectionOpenedTime)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetConnectionClosedTime)
