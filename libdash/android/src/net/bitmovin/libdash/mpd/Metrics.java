@@ -4,35 +4,27 @@ import java.util.Vector;
 
 public class Metrics extends AbstractMPDElement implements IMetrics {
 
-	@Override
-	public Vector<IDescriptor> GetReportings() {
-		// TODO Auto-generated method stub
-		return null;
+	Metrics() {
 	}
+	
+	Metrics(long cppThis) {
+		super(cppThis);
+	}
+	
+	@Override
+	public native Vector<IDescriptor> GetReportings();
 
 	@Override
-	public Vector<IRange> GetRanges() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public native Vector<IRange> GetRanges();
 
 	@Override
-	public String GetMetrics() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public native String GetMetrics();
 
 	@Override
-	protected long initialiseCppClass() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	protected native long initialiseCppClass();
 
 	@Override
-	protected void destoryCppClass() {
-		// TODO Auto-generated method stub
-
-	}
+	protected native void destoryCppClass();
 	
 	public native void    AddReporting    (Descriptor reporting);
 	public native void    AddRange        (Range range);

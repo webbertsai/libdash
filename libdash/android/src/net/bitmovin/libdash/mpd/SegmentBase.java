@@ -1,6 +1,6 @@
 package net.bitmovin.libdash.mpd;
 
-public class SegmentBase extends AbstractMPDElement implements ISegmentBase {
+public abstract class SegmentBase extends AbstractMPDElement implements ISegmentBase {
 
 	public SegmentBase() {
 	}

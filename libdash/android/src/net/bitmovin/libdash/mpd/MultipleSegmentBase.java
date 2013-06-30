@@ -1,6 +1,6 @@
 package net.bitmovin.libdash.mpd;
 
-public class MultipleSegmentBase extends SegmentBase implements
+public abstract class MultipleSegmentBase extends SegmentBase implements
 		IMultipleSegmentBase {
 
 	public MultipleSegmentBase() {
@@ -12,17 +12,14 @@ public class MultipleSegmentBase extends SegmentBase implements
 
 	@Override
 	public native ISegmentTimeline GetSegmentTimeline();
-
 	@Override
 	public native IURLType GetBitstreamSwitching();
-
 	@Override
 	public native int GetDuration();
-
 	@Override
 	public native int GetStartNumber();
 	
-	public native void    SetSegmentTimeline      (SegmentTimeline segmentTimeline); // markus: CONTINUE work here
+	public native void    SetSegmentTimeline      (SegmentTimeline segmentTimeline);
 	public native void    SetBitstreamSwitching   (URLType bitstreamSwitching);
 	public native void    SetDuration             (int duration);
 	public native void    SetStartNumber          (int startNumber);

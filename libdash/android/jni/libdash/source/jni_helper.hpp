@@ -167,23 +167,25 @@ void prefix##method(JNIEnv *env, jobject obj, jobject passOn) \
     classPtr->method(jni_helper::getClassPtr<cppClassType>(env, passOn)); \
 }
 
-#define CALL_METHOD_STRING_RETURN_VOID(prefix, method) \
-void prefix##method(JNIEnv *env, jobject obj, jstring passOn) \
+#define CALL_METHOD_STRING_RETURN_VOID_SUFFIX(prefix, method, suffix) \
+void prefix##method##suffix(JNIEnv *env, jobject obj, jstring passOn) \
 { \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)); \
     classPtr->method(jni_helper::convertJStringToStdString(env, passOn)); \
 }
+#define CALL_METHOD_STRING_RETURN_VOID(prefix, method) CALL_METHOD_STRING_RETURN_VOID_SUFFIX(prefix, method, )
 
-#define CALL_METHOD_NUMBER_RETURN_VOID(prefix, method, cppNumberType, javaNumberType) \
+#define CALL_METHOD_NUMBER_RETURN_VOID_SUFFIX(prefix, method, suffix, cppNumberType, javaNumberType) \
 void prefix##method(JNIEnv *env, jobject obj, javaNumberType passOn) \
 { \
     cppNumberType passOnCast = passOn; \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)); \
     classPtr->method(passOnCast); \
 }
+#define CALL_METHOD_NUMBER_RETURN_VOID(prefix, method, cppNumberType, javaNumberType) CALL_METHOD_NUMBER_RETURN_VOID_SUFFIX(prefix, method, , cppNumberType, javaNumberType)
 
-#define CALL_METHOD_RETURN_BOOLEAN(prefix, method) \
-jboolean prefix##method(JNIEnv *env, jobject obj) \
+#define CALL_METHOD_RETURN_BOOLEAN_SUFFIX(prefix, method, suffix) \
+jboolean prefix##method##suffix(JNIEnv *env, jobject obj) \
 { \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
     if (classPtr == 0) \
@@ -193,6 +195,8 @@ jboolean prefix##method(JNIEnv *env, jobject obj) \
     const bool& result(classPtr->method()); \
     return result; \
 }
+
+#define CALL_METHOD_RETURN_BOOLEAN(prefix, method) CALL_METHOD_RETURN_BOOLEAN_SUFFIX(prefix, method, )
 
 #define CALL_METHOD_RETURN_VOID(prefix, method) \
 void prefix##method(JNIEnv *env, jobject obj) \
@@ -205,8 +209,8 @@ void prefix##method(JNIEnv *env, jobject obj) \
     classPtr->method(); \
 }
 
-#define CALL_METHOD_RETURN_STRING(prefix, method) \
-jstring prefix##method(JNIEnv *env, jobject obj) \
+#define CALL_METHOD_RETURN_STRING_SUFFIX(prefix, method, suffix) \
+jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
 { \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
     if (classPtr == 0) \
@@ -217,7 +221,9 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
     return jni_helper::convertStdStringToJString(env, result); \
 }
 
-#define CALL_METHOD_RETURN_INT(prefix, method) jint prefix##method(JNIEnv *env, jobject obj) \
+#define CALL_METHOD_RETURN_STRING(prefix, method) CALL_METHOD_RETURN_STRING_SUFFIX(prefix, method, )
+
+#define CALL_METHOD_RETURN_INT_SUFFIX(prefix, method, suffix) jint prefix##method##suffix(JNIEnv *env, jobject obj) \
 { \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
     if (classPtr == 0) \
@@ -227,6 +233,7 @@ jstring prefix##method(JNIEnv *env, jobject obj) \
     const int& result(classPtr->method()); \
     return result; \
 }
+#define CALL_METHOD_RETURN_INT(prefix, method) CALL_METHOD_RETURN_INT_SUFFIX(prefix, method, )
 
 #define CALL_METHOD_RETURN_SHORT(prefix, method) jshort prefix##method(JNIEnv *env, jobject obj) \
 { \
