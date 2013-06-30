@@ -1,0 +1,38 @@
+#include "net_bitmovin_libdash_mpd_Segment.h"
+
+#include "mpd/Segment.h"
+
+#ifdef LOCAL_CLASS
+#   error local class already set
+#else
+#   define LOCAL_CLASS dash::mpd::Segment
+#endif
+
+#include "jni_helper.hpp"
+
+CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_mpd_Segment_)
+CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_mpd_Segment_)
+
+CALL_METHOD_RETURN_STRING_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, AbsoluteURI, __)
+CALL_METHOD_RETURN_STRING_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Host, __)
+CALL_METHOD_RETURN_STRING_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Path, __)
+CALL_METHOD_RETURN_STRING_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Range, __)
+
+CALL_METHOD_RETURN_INT_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Port, __)
+CALL_METHOD_RETURN_INT_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, StartByte, __)
+CALL_METHOD_RETURN_INT_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, EndByte, __)
+
+CALL_METHOD_RETURN_BOOLEAN_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, HasByteRange, __)
+
+CALL_METHOD_RETURN_INT(Java_net_bitmovin_libdash_mpd_Segment_, GetType)
+
+CALL_METHOD_STRING_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, AbsoluteURI, __Ljava_lang_String_2)
+CALL_METHOD_STRING_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Host, __Ljava_lang_String_2)
+CALL_METHOD_STRING_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Path, __Ljava_lang_String_2)
+CALL_METHOD_STRING_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Range, __Ljava_lang_String_2)
+
+CALL_METHOD_NUMBER_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, Port, __I, size_t, jint)
+CALL_METHOD_NUMBER_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, StartByte, __I, size_t, jint)
+CALL_METHOD_NUMBER_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, EndByte, __I, size_t, jint)
+
+CALL_METHOD_NUMBER_RETURN_VOID_SUFFIX(Java_net_bitmovin_libdash_mpd_Segment_, HasByteRange, __Z, bool, jboolean)

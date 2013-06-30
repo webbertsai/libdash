@@ -1,0 +1,34 @@
+#include "net_bitmovin_libdash_mpd_SubRepresentation.h"
+
+#include "mpd/SubRepresentation.h"
+
+#ifdef LOCAL_CLASS
+#   error local class already set
+#else
+#   define LOCAL_CLASS dash::mpd::SubRepresentation
+#endif
+
+#include "jni_helper.hpp"
+
+#define CALL_METHOD_RETURN_INT_PREFIX(method) CALL_METHOD_RETURN_INT(Java_net_bitmovin_libdash_mpd_SubRepresentation_, method)
+#define CALL_METHOD_RETURN_STRINGVECTOR_PREFIX(method) CALL_METHOD_RETURN_STRINGVECTOR(Java_net_bitmovin_libdash_mpd_SubRepresentation_, method)
+#define CALL_METHOD_RETURN_INTVECTOR_PREFIX(method, cppClassType) CALL_METHOD_RETURN_INTVECTOR(Java_net_bitmovin_libdash_mpd_SubRepresentation_, method, cppClassType)
+
+#define CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(method, cppNumberType, javaNumberType) CALL_METHOD_NUMBER_RETURN_VOID(Java_net_bitmovin_libdash_mpd_SubRepresentation_, method, cppNumberType, javaNumberType)
+#define CALL_METHOD_STRING_RETURN_VOID_PREFIX(method) CALL_METHOD_STRING_RETURN_VOID(Java_net_bitmovin_libdash_mpd_SubRepresentation_, method)
+
+CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_mpd_SubRepresentation_)
+CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_mpd_SubRepresentation_)
+
+CALL_METHOD_RETURN_INT_PREFIX(GetLevel)
+CALL_METHOD_RETURN_INT_PREFIX(GetBandWidth)
+
+CALL_METHOD_RETURN_INTVECTOR_PREFIX(GetDependencyLevel, uint32_t)
+
+CALL_METHOD_RETURN_STRINGVECTOR_PREFIX(GetContentComponent)
+
+CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(SetLevel, uint32_t, jint)
+CALL_METHOD_NUMBER_RETURN_VOID_PREFIX(SetBandWidth, uint32_t, jint)
+
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetDependencyLevel)
+CALL_METHOD_STRING_RETURN_VOID_PREFIX(SetContentComponent)
