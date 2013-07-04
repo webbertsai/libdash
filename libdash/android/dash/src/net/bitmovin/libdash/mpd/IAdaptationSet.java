@@ -28,10 +28,10 @@ public interface IAdaptationSet extends IRepresentationBase {
     int                       GetMaxHeight                    ();
     String                    GetMinFramerate                 ();
     String                    GetMaxFramerate                 ();
-    boolean                   SegmentAlignmentIsbooleanValue  ();
+    boolean                   SegmentAlignmentIsBoolValue  ();
     boolean                   HasSegmentAlignment             ();
     int                       GetSegmentAligment              ();
-    boolean                   SubsegmentAlignmentIsbooleanValue ();
+    boolean                   SubsegmentAlignmentIsBoolValue ();
     boolean                   HasSubsegmentAlignment          ();
     int                       GetSubsegmentAlignment          ();
     byte                   	  GetSubsegmentStartsWithSAP      ();

@@ -26,7 +26,7 @@ CALL_METHOD_RETURN_OBJECTPTRVECTOR_PREFIX(GetBaseURLs, dash::mpd::IBaseUrl, "net
 CALL_METHOD_RETURN_OBJECTPTRVECTOR_PREFIX(GetAdaptationSets, dash::mpd::IAdaptationSet, "net/bitmovin/libdash/mpd/AdaptationSet")
 CALL_METHOD_RETURN_OBJECTPTRVECTOR_PREFIX(GetSubsets, dash::mpd::ISubset, "net/bitmovin/libdash/mpd/Subset")
 
-CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentBase, dash::mpd::ISegmentBase, "net/bitmovin/libdash/mpd/SegmentBase")
+CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentBase, dash::mpd::ISegmentBase, "net/bitmovin/libdash/mpd/Segment")
 CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentList, dash::mpd::ISegmentList, "net/bitmovin/libdash/mpd/SegmentList")
 CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentTemplate, dash::mpd::ISegmentTemplate, "net/bitmovin/libdash/mpd/SegmentTemplate")
 

@@ -24,6 +24,7 @@ public class DashTest extends TestCase {
 		Log.d(TAG, "mpd.GetMediaPresentationDuration():" + mpd.GetMediaPresentationDuration());
 		Log.d(TAG, "mpd.GetFetchTime():" + mpd.GetFetchTime());
 		Log.d(TAG, "mpd.GetProfiles():" + mpd.GetProfiles());
+		Log.d(TAG, "mpd.GetProgramInformations():" + mpd.GetProgramInformations());
 		
 		toTest.destroy();
 	}

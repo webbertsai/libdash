@@ -4,7 +4,10 @@
 #include <jni.h>
 #include <string>
 #include <vector>
+#include <android/log.h>
 
+#define  LOG_TAG    "jni_helper"
+#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
 
 namespace jni_helper
@@ -79,6 +82,14 @@ void destroyInstance(JNIEnv *env, jobject &obj)
 template <class classType>
 jobject convertCppInstanceToJObject(JNIEnv *env, classType *toCast, const char *javaClass, jclass *resultClass = 0)
 {
+    if (toCast == 0)
+    {
+        if (resultClass != 0)
+        {
+            *resultClass = 0;
+        }
+        return 0;
+    }
     jlong workJLong = jni_helper::convertPtrToJLong(toCast);
 
     jclass clazz_cast = env->FindClass(javaClass);
@@ -341,12 +352,15 @@ jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
     if (classPtr == 0)\
     {\
+        LOGD("classPtr == 0"); \
         return 0;\
     }\
     typedef std::vector<cppClassType*> t_vector;\
-    const t_vector &toCast(classPtr->method());\
-\
+    t_vector toCast(classPtr->method());\
+    LOGD("toCast.size():%d", toCast.size()); \
+    \
     return jni_helper::convertStdVectorToJavaArrayList<cppClassType>(env, javaClassType, toCast); \
+\
 }
 
 

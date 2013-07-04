@@ -62,13 +62,13 @@ public class AdaptationSet extends RepresentationBase implements IAdaptationSet 
 	@Override
 	public native String GetMaxFramerate();
 	@Override
-	public native boolean SegmentAlignmentIsbooleanValue();
+	public native boolean SegmentAlignmentIsBoolValue();
 	@Override
 	public native boolean HasSegmentAlignment();
 	@Override
 	public native int GetSegmentAligment();
 	@Override
-	public native boolean SubsegmentAlignmentIsbooleanValue();
+	public native boolean SubsegmentAlignmentIsBoolValue();
 	@Override
 	public native boolean HasSubsegmentAlignment();
 	@Override

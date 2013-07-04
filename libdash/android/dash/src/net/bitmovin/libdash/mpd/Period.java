@@ -3,6 +3,12 @@ package net.bitmovin.libdash.mpd;
 import java.util.Vector;
 
 public class Period extends AbstractMPDElement implements IPeriod {
+	public Period() {
+		
+	}
+	public Period(long cppThis) {
+		super(cppThis);
+	}
 
 	@Override
 	public native Vector<IBaseUrl> GetBaseURLs();

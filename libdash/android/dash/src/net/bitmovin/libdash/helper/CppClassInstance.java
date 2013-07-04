@@ -5,7 +5,7 @@ import android.util.Log;
 public abstract class CppClassInstance {
 	private static final String TAG = "CppClassInstance";
 	
-	public long cppThis;
+	public long cppThis = 0;
 	
 	public CppClassInstance() {
 		this.cppThis = initialiseCppClass();
