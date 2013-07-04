@@ -137,6 +137,8 @@ jobject convertStdVectorToJavaArrayList(JNIEnv *env, const char *javaClassType, 
 
         jni_helper::addToJavaArrayList(env, clazz_vector, result, object_cast);
     }
+
+    return result;
 }
 
 
@@ -346,6 +348,7 @@ jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
 \
     return jni_helper::convertStdVectorToJavaArrayList<cppClassType>(env, javaClassType, toCast); \
 }
+
 
 #define CALL_METHOD_RETURN_OBJECTPTR(prefix, method, cppClassType, javaClassType) jobject prefix##method(JNIEnv *env, jobject obj) \
 {   \
