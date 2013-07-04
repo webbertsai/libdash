@@ -39,6 +39,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_destoryCppC
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_AddTimeline
   (JNIEnv *, jobject, jobject);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentTimeline
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentTimeline
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

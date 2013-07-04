@@ -39,6 +39,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Subset_destoryCppClass
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Subset_SetSubset
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_Subset
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Subset_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_Subset
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Subset_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

@@ -1,6 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public class SegmentTemplate extends MultipleSegmentBase implements
 		ISegmentTemplate {
@@ -41,5 +44,10 @@ public class SegmentTemplate extends MultipleSegmentBase implements
 	public native void    SetIndex                (String index);
 	public native void    SetInitialization       (String initialization);
 	public native void    SetBitstreamSwitching   (String bitstreamSwichting);
+	
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 
 }

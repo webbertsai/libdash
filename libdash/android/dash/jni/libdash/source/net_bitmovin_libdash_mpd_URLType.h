@@ -71,6 +71,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_URLType_SetRange
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_URLType_SetType
   (JNIEnv *, jobject, jobject);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_URLType
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_URLType_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_URLType
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_URLType_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

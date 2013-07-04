@@ -79,6 +79,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_SetServiceLocation
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_SetByteRange
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_BaseUrl
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_BaseUrl
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

@@ -26,7 +26,7 @@ CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_mpd_Representation_)
 CALL_METHOD_RETURN_OBJECTPTRVECTOR_PREFIX(GetBaseURLs, dash::mpd::IBaseUrl, "net/bitmovin/libdash/mpd/BaseUrl")
 CALL_METHOD_RETURN_OBJECTPTRVECTOR_PREFIX(GetSubRepresentations, dash::mpd::ISubRepresentation, "net/bitmovin/libdash/mpd/SubRepresentation")
 
-CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentBase, dash::mpd::ISegmentBase, "net/bitmovin/libdash/mpd/SegmentBase")
+CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentBase, dash::mpd::ISegmentBase, "net/bitmovin/libdash/mpd/Segment")
 CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentList, dash::mpd::ISegmentList, "net/bitmovin/libdash/mpd/SegmentList")
 CALL_METHOD_RETURN_OBJECTPTR_PREFIX(GetSegmentTemplate, dash::mpd::ISegmentTemplate, "net/bitmovin/libdash/mpd/SegmentTemplate")
 

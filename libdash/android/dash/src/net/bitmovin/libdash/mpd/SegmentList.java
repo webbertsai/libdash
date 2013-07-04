@@ -1,6 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public class SegmentList extends MultipleSegmentBase implements ISegmentList {
 
@@ -27,4 +30,8 @@ public class SegmentList extends MultipleSegmentBase implements ISegmentList {
 	public native void    SetXlinkHref    (String xlinkHref);
 	public native void    SetXlinkActuate (String xlinkActuate);
 
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 }

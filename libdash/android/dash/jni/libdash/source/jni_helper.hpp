@@ -350,6 +350,7 @@ jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
 #define CALL_METHOD_RETURN_OBJECTPTRVECTOR(prefix, method, cppClassType, javaClassType) jobject prefix##method(JNIEnv *env, jobject obj) \
 {   \
     LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
+    LOGD("classPtr:%p", classPtr); \
     if (classPtr == 0)\
     {\
         LOGD("classPtr == 0"); \
@@ -357,7 +358,7 @@ jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
     }\
     typedef std::vector<cppClassType*> t_vector;\
     t_vector toCast(classPtr->method());\
-    LOGD("toCast.size():%d", toCast.size()); \
+    LOGD("toCast->size():%d", toCast.size()); \
     \
     return jni_helper::convertStdVectorToJavaArrayList<cppClassType>(env, javaClassType, toCast); \
 \
@@ -376,5 +377,34 @@ jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
 \
     return object_cast;\
 }
+
+#define INHERT_ABSTRACTMPDELEMENT(prefix) \
+CALL_METHOD_RETURN_OBJECTPTRVECTOR(prefix, GetAdditionalSubNodes, dash::xml::INode, "net/bitmovin/libdash/xml/Node") \
+\
+jobject prefix##GetRawAttributes(JNIEnv *env, jobject obj)\
+{ \
+    typedef std::map<std::string, std::string> t_map;\
+    LOCAL_CLASS* thiz(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
+    if (thiz == 0)\
+    {\
+        return 0;\
+    }\
+    const t_map &toCast(thiz->GetRawAttributes());\
+\
+    jclass map_clazz;\
+    jobject map_obj = 0;\
+    jni_helper::createJavaMap(env, &map_clazz, &map_obj);\
+\
+    for (t_map::const_iterator it = toCast.begin(); it != toCast.end(); ++it)\
+    {\
+        jstring addA = jni_helper::convertStdStringToJString(env, it->first);\
+        jstring addB = jni_helper::convertStdStringToJString(env, it->second);\
+\
+        jni_helper::addToJavaMap<jstring, jstring>(env, map_clazz, map_obj, addA, addB);\
+    }\
+\
+    return map_obj;\
+}\
+CALL_METHOD_OBJECT_RETURN_VOID(prefix, AddAdditionalSubNode, dash::xml::INode)
 
 #endif // LIBDASH_JNI_HELPER_HPP

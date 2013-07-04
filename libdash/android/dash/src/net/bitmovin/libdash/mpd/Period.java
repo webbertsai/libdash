@@ -1,6 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public class Period extends AbstractMPDElement implements IPeriod {
 	public Period() {
@@ -64,5 +67,11 @@ public class Period extends AbstractMPDElement implements IPeriod {
 	public native void    SetStart                    (String start);
 	public native void    SetDuration                 (String duration);
 	public native void    SetBitstreamSwitching       (boolean value);
+	
+
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 
 }

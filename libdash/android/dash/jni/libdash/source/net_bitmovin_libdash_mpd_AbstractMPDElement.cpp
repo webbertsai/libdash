@@ -7,12 +7,12 @@
 #ifdef LOCAL_CLASS
 #   error local class already set
 #else
-#   define LOCAL_CLASS dash::mpd::AbstractMPDElement
+#   define LOCAL_CLASS dash::mpd::IMPDElement
 #endif
 
 #include "jni_helper.hpp"
 
-CALL_METHOD_RETURN_OBJECTPTRVECTOR(Java_net_bitmovin_libdash_mpd_AbstractMPDElement_, GetAdditionalSubNodes, dash::xml::INode, "net/bitmovin/libdash/xml/Node")
+/*CALL_METHOD_RETURN_OBJECTPTRVECTOR(Java_net_bitmovin_libdash_mpd_AbstractMPDElement_, GetAdditionalSubNodes, dash::xml::INode, "net/bitmovin/libdash/xml/Node")
 
 jobject Java_net_bitmovin_libdash_mpd_AbstractMPDElement_GetRawAttributes(JNIEnv *env, jobject obj)
 {
@@ -39,12 +39,14 @@ jobject Java_net_bitmovin_libdash_mpd_AbstractMPDElement_GetRawAttributes(JNIEnv
     return map_obj;
 }
 
-CALL_METHOD_OBJECT_RETURN_VOID(Java_net_bitmovin_libdash_mpd_AbstractMPDElement_, AddAdditionalSubNode, dash::xml::INode)
+#undef LOCAL_CLASS
+#define LOCAL_CLASS dash::mpd::AbstractMPDElement
 
+CALL_METHOD_OBJECT_RETURN_VOID(Java_net_bitmovin_libdash_mpd_AbstractMPDElement_, AddAdditionalSubNode, dash::xml::INode)
 
 void Java_net_bitmovin_libdash_mpd_AbstractMPDElement_AddRawAttributesNative(JNIEnv *env, jobject obj, jobjectArray keys, jobjectArray values)
 {
-    /*std::map<std::string, std::string> cast;
+    std::map<std::string, std::string> cast;
 
     jclass clazz_map = env->GetObjectClass(attributes);
 
@@ -64,7 +66,7 @@ void Java_net_bitmovin_libdash_mpd_AbstractMPDElement_AddRawAttributesNative(JNI
         cast[keyCasted] = valueCasted;
     }
 
-    jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)->AddRawAttributes(cast);*/
+    jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)->AddRawAttributes(cast);
 
     std::map<std::string, std::string> cast;
 
@@ -78,7 +80,8 @@ void Java_net_bitmovin_libdash_mpd_AbstractMPDElement_AddRawAttributesNative(JNI
         std::string valueCasted = jni_helper::convertJStringToStdString(env, value);
 
         cast[keyCasted] = valueCasted;
-    }*/
+    }
 
     jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)->AddRawAttributes(cast);
 }
+*/

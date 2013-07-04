@@ -71,6 +71,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Timeline_SetDuration
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Timeline_SetRepeatCount
   (JNIEnv *, jobject, jint);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_Timeline
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Timeline_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_Timeline
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Timeline_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

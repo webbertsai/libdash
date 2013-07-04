@@ -183,6 +183,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Representation_SetDependenc
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Representation_SetMediaStreamStructureId
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_Representation
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_Representation
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

@@ -1,6 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public class AdaptationSet extends RepresentationBase implements IAdaptationSet {
 
@@ -111,5 +114,10 @@ public class AdaptationSet extends RepresentationBase implements IAdaptationSet 
 	public native void    SetSubsegmentAlignment      (String subsegmentAlignment);
 	public native void    SetSubsegmentStartsWithSAP  (byte subsegmentStartsWithSAP);
 	public native void    SetBitstreamSwitching       (boolean value);
-	
+
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 }

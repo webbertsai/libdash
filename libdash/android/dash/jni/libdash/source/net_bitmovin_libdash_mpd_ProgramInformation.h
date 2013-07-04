@@ -103,6 +103,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_ProgramInformation_SetLang
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_ProgramInformation_SetMoreInformationURL
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_ProgramInformation
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_ProgramInformation_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_ProgramInformation
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_ProgramInformation_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

@@ -359,6 +359,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetMPDPathBaseUrl
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_MPD_SetFetchTime
   (JNIEnv *, jobject, jint);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_MPD_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_MPD
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_MPD_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

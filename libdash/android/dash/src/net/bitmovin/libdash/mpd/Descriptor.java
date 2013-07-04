@@ -1,5 +1,10 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
+import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
+
 public class Descriptor extends AbstractMPDElement implements IDescriptor {
 
 	public Descriptor() {
@@ -23,5 +28,12 @@ public class Descriptor extends AbstractMPDElement implements IDescriptor {
 	
     public native void    SetValue        (String value);
     public native void    SetSchemeIdUri  (String schemeIdUri);
+    
+
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 
 }

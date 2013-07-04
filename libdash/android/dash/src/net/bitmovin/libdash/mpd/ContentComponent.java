@@ -1,6 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public class ContentComponent extends AbstractMPDElement implements
 		IContentComponent {
@@ -41,4 +44,11 @@ public class ContentComponent extends AbstractMPDElement implements
 	public native void    SetLang         (String lang);
 	public native void    SetContentType  (String contentType);
 	public native void    SetPar          (String par);
+	
+
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 }

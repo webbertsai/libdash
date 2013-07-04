@@ -55,6 +55,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Descriptor_SetValue
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Descriptor_SetSchemeIdUri
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_Descriptor
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Descriptor_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_Descriptor
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Descriptor_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

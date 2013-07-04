@@ -25,6 +25,8 @@
 CALL_INITIALISECPPCLASS(Java_net_bitmovin_libdash_mpd_MPD_)
 CALL_DESTROYCPPCLASS(Java_net_bitmovin_libdash_mpd_MPD_)
 
+INHERT_ABSTRACTMPDELEMENT(Java_net_bitmovin_libdash_mpd_MPD_)
+
 CALL_METHOD_RETURN_STRING_PREFIX(GetId)
 CALL_METHOD_RETURN_STRING_PREFIX(GetType)
 CALL_METHOD_RETURN_STRING_PREFIX(GetAvailabilityStarttime)

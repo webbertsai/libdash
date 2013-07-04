@@ -87,6 +87,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_SetBandWi
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_SetContentComponent
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_SubRepresentation
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_SubRepresentation
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

@@ -1,6 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public class Representation extends RepresentationBase implements
 		IRepresentation {
@@ -47,4 +50,9 @@ public class Representation extends RepresentationBase implements
 	public native void    SetQualityRanking           (int qualityRanking);
 	public native void    SetDependencyId             (String dependencyId);
 	public native void    SetMediaStreamStructureId   (String mediaStreamStructureId);
+	
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 }

@@ -1,8 +1,10 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.TreeMap;
 import java.util.Vector;
 
 import net.bitmovin.libdash.metrics.HTTPTransactionType;
+import net.bitmovin.libdash.xml.INode;
 
 public class URLType extends AbstractMPDElement implements IURLType {
 
@@ -31,5 +33,10 @@ public class URLType extends AbstractMPDElement implements IURLType {
 	public native void    SetSourceURL    (String sourceURL);
 	public native void    SetRange        (String range);
 	public native void    SetType         (HTTPTransactionType type);
+	
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 
 }

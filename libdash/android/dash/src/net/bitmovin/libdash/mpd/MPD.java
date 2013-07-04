@@ -1,11 +1,14 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
+import java.util.Vector;
 
 import net.bitmovin.libdash.metrics.HTTPTransaction;
 import net.bitmovin.libdash.metrics.IHTTPTransaction;
 import net.bitmovin.libdash.metrics.ITCPConnection;
 import net.bitmovin.libdash.metrics.TCPConnection;
+import net.bitmovin.libdash.xml.INode;
 
 public class MPD extends AbstractMPDElement implements IMPD {
 
@@ -107,4 +110,10 @@ public class MPD extends AbstractMPDElement implements IMPD {
 	protected native void    SetMaxSubsegmentDuration        (String maxSubsegmentDuration);
 	protected native void    SetMPDPathBaseUrl               (BaseUrl path);
 	protected native void    SetFetchTime                    (int fetchTimeInSec);
+
+	@Override
+	public native Vector<INode> GetAdditionalSubNodes();
+
+	@Override
+	public native TreeMap<String, String> GetRawAttributes();
 }

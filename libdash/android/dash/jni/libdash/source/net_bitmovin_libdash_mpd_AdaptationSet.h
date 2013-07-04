@@ -209,10 +209,10 @@ JNIEXPORT jstring JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetMaxFram
 
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
- * Method:    SegmentAlignmentIsbooleanValue
+ * Method:    SegmentAlignmentIsBoolValue
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SegmentAlignmentIsbooleanValue
+JNIEXPORT jboolean JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SegmentAlignmentIsBoolValue
   (JNIEnv *, jobject);
 
 /*
@@ -233,10 +233,10 @@ JNIEXPORT jint JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetSegmentAli
 
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
- * Method:    SubsegmentAlignmentIsbooleanValue
+ * Method:    SubsegmentAlignmentIsBoolValue
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SubsegmentAlignmentIsbooleanValue
+JNIEXPORT jboolean JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SubsegmentAlignmentIsBoolValue
   (JNIEnv *, jobject);
 
 /*
@@ -518,6 +518,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SetSubsegment
  */
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SetBitstreamSwitching
   (JNIEnv *, jobject, jboolean);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_AdaptationSet
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_AdaptationSet
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetRawAttributes
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }

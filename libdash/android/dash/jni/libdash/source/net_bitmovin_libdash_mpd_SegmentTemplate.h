@@ -135,6 +135,22 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_SetInitiali
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_SetBitstreamSwitching
   (JNIEnv *, jobject, jstring);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/Vector;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetRawAttributes
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif
