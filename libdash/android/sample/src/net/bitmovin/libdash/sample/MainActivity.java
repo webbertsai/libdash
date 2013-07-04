@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 		Log.d(TAG, "GetBaseURLs:" + representation.GetBaseURLs                 ());
 		Log.d(TAG, "GetSubRepresentations:" + representation.GetSubRepresentations       ());
 		Log.d(TAG, "GetSegmentBase:" + representation.GetSegmentBase              ());
-		Log.d(TAG, "GetSegmentList:" + representation.GetSegmentList              ()); // TODO: test segment
+		Log.d(TAG, "GetSegmentList:" + representation.GetSegmentList              ());
 		Log.d(TAG, "GetSegmentTemplate:" + representation.GetSegmentTemplate          ());
 		Log.d(TAG, "GetId:" + representation.GetId                       ());
 		Log.d(TAG, "GetBandwidth:" + representation.GetBandwidth                ());
@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
 		Log.d(TAG, "GetMaxPlayoutRate:" + representation.GetMaxPlayoutRate               ());
 		Log.d(TAG, "HasCodingDependency:" + representation.HasCodingDependency             ());
 		Log.d(TAG, "GetScanType:" + representation.GetScanType                     ());
-	
+			
 		toTest.destroy();
 	}
 
