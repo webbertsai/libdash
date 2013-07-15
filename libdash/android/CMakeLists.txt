@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-option (ANDROID_BUILD "build android port" ON) 
+option (ANDROID_BUILD "build android port" OFF) 
 
 if (ANDROID_BUILD)
 
