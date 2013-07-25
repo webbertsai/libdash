@@ -141,12 +141,20 @@ jobject convertStdVectorToJavaArrayList(JNIEnv *env, const char *javaClassType, 
     jobject result;
     jni_helper::createJavaArrayList(env, &clazz_vector, &result);
 
+    jclass clazz_cast = env->FindClass(javaClassType); // optimzed way
+
     for (typename t_vector::const_iterator it = toCast.begin(); it != toCast.end(); ++it)\
     {
         classType* work(*it);
-        jobject object_cast = jni_helper::convertCppInstanceToJObject(env, work, javaClassType, 0);
+        // jobject object_cast = jni_helper::convertCppInstanceToJObject(env, work, javaClassType, 0); // fine too - but needs 2x instances (class + object)
+        // optimized way
+        {
+            jlong workJLong = jni_helper::convertPtrToJLong(work);
 
-        jni_helper::addToJavaArrayList(env, clazz_vector, result, object_cast);
+            jobject object_cast = env->NewObject(clazz_cast, env->GetMethodID(clazz_cast, "<init>", "(J)V"), workJLong);
+
+            jni_helper::addToJavaArrayList(env, clazz_vector, result, object_cast);
+        }
     }
 
     return result;
