@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -30,7 +30,7 @@ public class Timeline extends AbstractMPDElement implements ITimeline {
 	public native void    SetRepeatCount  (int repeatCount);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 

@@ -2,7 +2,6 @@ package net.bitmovin.libdash.mpd;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
-import java.util.Vector;
 
 import net.bitmovin.libdash.metrics.HTTPTransaction;
 import net.bitmovin.libdash.metrics.IHTTPTransaction;
@@ -112,7 +111,7 @@ public class MPD extends AbstractMPDElement implements IMPD {
 	protected native void    SetFetchTime                    (int fetchTimeInSec);
 
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();

@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetAccessibility
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetAccessibility
   (JNIEnv *, jobject);
@@ -18,7 +18,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetAccessi
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetRole
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetRole
   (JNIEnv *, jobject);
@@ -26,7 +26,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetRole
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetRating
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetRating
   (JNIEnv *, jobject);
@@ -34,7 +34,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetRating
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetViewpoint
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetViewpoint
   (JNIEnv *, jobject);
@@ -42,7 +42,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetViewpoi
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetContentComponent
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetContentComponent
   (JNIEnv *, jobject);
@@ -50,7 +50,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetContent
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetBaseURLs
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetBaseURLs
   (JNIEnv *, jobject);
@@ -82,7 +82,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetSegment
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetRepresentation
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetRepresentation
   (JNIEnv *, jobject);
@@ -522,7 +522,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_SetBitstreamS
 /*
  * Class:     net_bitmovin_libdash_mpd_AdaptationSet
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_AdaptationSet_GetAdditionalSubNodes
   (JNIEnv *, jobject);

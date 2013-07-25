@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -24,17 +24,17 @@ public class SegmentTemplate extends MultipleSegmentBase implements
 	@Override
 	public native String GetbitstreamSwitching();
 	@Override
-	public native ISegment ToInitializationSegment(Vector<IBaseUrl> baseurls, String representationID, int bandwidth);
+	public native ISegment ToInitializationSegment(ArrayList<IBaseUrl> baseurls, String representationID, int bandwidth);
 	@Override
-	public native ISegment ToBitstreamSwitchingSegment(Vector<IBaseUrl> baseurls, String representationID, int bandwidth);
+	public native ISegment ToBitstreamSwitchingSegment(ArrayList<IBaseUrl> baseurls, String representationID, int bandwidth);
 	@Override
-	public native ISegment GetMediaSegmentFromNumber(Vector<IBaseUrl> baseurls, String representationID, int bandwidth, int number);
+	public native ISegment GetMediaSegmentFromNumber(ArrayList<IBaseUrl> baseurls, String representationID, int bandwidth, int number);
 	@Override
-	public native ISegment GetIndexSegmentFromNumber(Vector<IBaseUrl> baseurls, String representationID, int bandwidth, int number);
+	public native ISegment GetIndexSegmentFromNumber(ArrayList<IBaseUrl> baseurls, String representationID, int bandwidth, int number);
 	@Override
-	public native ISegment GetMediaSegmentFromTime(Vector<IBaseUrl> baseurls, String representationID, int bandwidth, int time);
+	public native ISegment GetMediaSegmentFromTime(ArrayList<IBaseUrl> baseurls, String representationID, int bandwidth, int time);
 	@Override
-	public native ISegment GetIndexSegmentFromTime(Vector<IBaseUrl> baseurls, String representationID, int bandwidth, int time);
+	public native ISegment GetIndexSegmentFromTime(ArrayList<IBaseUrl> baseurls, String representationID, int bandwidth, int time);
 	@Override
 	protected native long initialiseCppClass();
 	@Override
@@ -46,7 +46,7 @@ public class SegmentTemplate extends MultipleSegmentBase implements
 	public native void    SetBitstreamSwitching   (String bitstreamSwichting);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 

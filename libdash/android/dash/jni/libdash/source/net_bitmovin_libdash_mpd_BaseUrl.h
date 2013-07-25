@@ -34,7 +34,7 @@ JNIEXPORT jstring JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_GetByteRange
 /*
  * Class:     net_bitmovin_libdash_mpd_BaseUrl
  * Method:    ToMediaSegment
- * Signature: (Ljava/util/Vector;)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_ToMediaSegment
   (JNIEnv *, jobject, jobject);
@@ -82,7 +82,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_SetByteRange
 /*
  * Class:     net_bitmovin_libdash_mpd_BaseUrl
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_BaseUrl_GetAdditionalSubNodes
   (JNIEnv *, jobject);

@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTimeline
  * Method:    GetTimelines
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_GetTimelines
   (JNIEnv *, jobject);
@@ -42,7 +42,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_AddTimeline
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTimeline
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTimeline_GetAdditionalSubNodes
   (JNIEnv *, jobject);

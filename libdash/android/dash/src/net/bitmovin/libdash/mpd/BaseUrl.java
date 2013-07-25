@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -25,7 +25,7 @@ public class BaseUrl extends AbstractMPDElement implements IBaseUrl {
 	public native String GetByteRange();
 
 	@Override
-	public native ISegment ToMediaSegment(Vector<IBaseUrl> baseurls);
+	public native ISegment ToMediaSegment(ArrayList<IBaseUrl> baseurls);
 
 	@Override
 	protected native long initialiseCppClass();
@@ -38,7 +38,7 @@ public class BaseUrl extends AbstractMPDElement implements IBaseUrl {
 	public native void    SetByteRange        (String byteRange);
 
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();

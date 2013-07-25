@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface ISubset extends IMPDElement {
-	Vector<Integer> Contains ();
+	ArrayList<Integer> Contains ();
 }

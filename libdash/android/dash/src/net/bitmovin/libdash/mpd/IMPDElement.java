@@ -1,9 +1,11 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
-import java.util.Vector;
+
+import net.bitmovin.libdash.xml.INode;
 
 public interface IMPDElement {
-	Vector<net.bitmovin.libdash.xml.INode>		GetAdditionalSubNodes	();
+	ArrayList<INode>		GetAdditionalSubNodes	();
 	TreeMap<String, String>							GetRawAttributes        ();
 }

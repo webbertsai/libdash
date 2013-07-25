@@ -1,6 +1,11 @@
 package net.bitmovin.libdash.mpd;
 
-public abstract class SegmentBase extends AbstractMPDElement implements ISegmentBase {
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+import net.bitmovin.libdash.xml.INode;
+
+public class SegmentBase extends AbstractMPDElement implements ISegmentBase {
 
 	public SegmentBase() {
 	}
@@ -11,7 +16,7 @@ public abstract class SegmentBase extends AbstractMPDElement implements ISegment
 
 	@Override
 	public native IURLType GetInitialization();
-
+	
 	@Override
 	public native IURLType GetRepresentationIndex();
 
@@ -33,5 +38,15 @@ public abstract class SegmentBase extends AbstractMPDElement implements ISegment
 	public native void    SetPresentationTimeOffset   (int presentationTimeOffset);
 	public native void    SetIndexRange               (String indexRange);
 	public native void    SetIndexRangeExact          (boolean indexRangeExact);
+
+	@Override
+	native public ArrayList<INode> GetAdditionalSubNodes();
+	@Override
+	native public TreeMap<String, String> GetRawAttributes();
+
+	@Override
+	native protected long initialiseCppClass();
+	@Override
+	native protected void destoryCppClass();
 
 }

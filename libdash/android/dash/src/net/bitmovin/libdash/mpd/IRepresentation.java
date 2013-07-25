@@ -1,16 +1,16 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface IRepresentation extends IRepresentationBase {
-	Vector<IBaseUrl>              GetBaseURLs                 ();
-    Vector<ISubRepresentation>    GetSubRepresentations       ();
+	ArrayList<IBaseUrl>              GetBaseURLs                 ();
+	ArrayList<ISubRepresentation>    GetSubRepresentations       ();
     ISegmentBase                  GetSegmentBase              ();
     ISegmentList                  GetSegmentList              ();
     ISegmentTemplate              GetSegmentTemplate          ();
     String                        GetId                       ();
     int                           GetBandwidth                ();
     int                           GetQualityRanking           ();
-    Vector<String>             	  GetDependencyId             ();
-    Vector<String>                GetMediaStreamStructureId   ();
+    ArrayList<String>             	  GetDependencyId             ();
+    ArrayList<String>                GetMediaStreamStructureId   ();
 }

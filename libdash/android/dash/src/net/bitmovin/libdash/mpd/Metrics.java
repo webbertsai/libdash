@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -15,10 +15,10 @@ public class Metrics extends AbstractMPDElement implements IMetrics {
 	}
 	
 	@Override
-	public native Vector<IDescriptor> GetReportings();
+	public native ArrayList<IDescriptor> GetReportings();
 
 	@Override
-	public native Vector<IRange> GetRanges();
+	public native ArrayList<IRange> GetRanges();
 
 	@Override
 	public native String GetMetrics();
@@ -35,7 +35,7 @@ public class Metrics extends AbstractMPDElement implements IMetrics {
 	
 
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();

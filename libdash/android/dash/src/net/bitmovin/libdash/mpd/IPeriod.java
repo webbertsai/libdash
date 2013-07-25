@@ -1,14 +1,14 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface IPeriod extends IMPDElement {
-	Vector<IBaseUrl>          GetBaseURLs             ();
+	ArrayList<IBaseUrl>          GetBaseURLs             ();
     ISegmentBase              GetSegmentBase          ();
     ISegmentList              GetSegmentList          ();
     ISegmentTemplate          GetSegmentTemplate      ();
-    Vector<IAdaptationSet>    GetAdaptationSets       ();
-    Vector<ISubset>           GetSubsets              ();
+    ArrayList<IAdaptationSet>    GetAdaptationSets       ();
+    ArrayList<ISubset>           GetSubsets              ();
     String 					  GetXlinkHref            ();
     String 					  GetXlinkActuate         ();
     String 					  GetId                   ();

@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -16,7 +16,7 @@ public class SegmentTimeline extends AbstractMPDElement implements
 	}
 
 	@Override
-	public native Vector<ITimeline> GetTimelines();
+	public native ArrayList<ITimeline> GetTimelines();
 	@Override
 	protected native long initialiseCppClass();
 	@Override
@@ -25,7 +25,7 @@ public class SegmentTimeline extends AbstractMPDElement implements
 	public native void AddTimeline(Timeline timeline);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 

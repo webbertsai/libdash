@@ -1,18 +1,18 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface IAdaptationSet extends IRepresentationBase {
-	Vector<IDescriptor>       GetAccessibility                ();
-    Vector<IDescriptor>       GetRole                         ();
-    Vector<IDescriptor>       GetRating                       ();
-    Vector<IDescriptor>       GetViewpoint                    ();
-    Vector<IContentComponent> GetContentComponent             ();
-    Vector<IBaseUrl>          GetBaseURLs                     ();
+	ArrayList<IDescriptor>       GetAccessibility                ();
+	ArrayList<IDescriptor>       GetRole                         ();
+    ArrayList<IDescriptor>       GetRating                       ();
+    ArrayList<IDescriptor>       GetViewpoint                    ();
+    ArrayList<IContentComponent> GetContentComponent             ();
+    ArrayList<IBaseUrl>          GetBaseURLs                     ();
     ISegmentBase              GetSegmentBase                  ();
     ISegmentList              GetSegmentList                  ();
     ISegmentTemplate          GetSegmentTemplate              ();
-    Vector<IRepresentation>   GetRepresentation               ();
+    ArrayList<IRepresentation>   GetRepresentation               ();
     String                    GetXlinkHref                    ();
     String                    GetXlinkActuate                 ();
     int                       GetId                           ();

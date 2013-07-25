@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -16,13 +16,13 @@ public class ContentComponent extends AbstractMPDElement implements
 	}
 
 	@Override
-	public native Vector<IDescriptor> GetAccessibility();
+	public native ArrayList<IDescriptor> GetAccessibility();
 	@Override
-	public native Vector<IDescriptor> GetRole();
+	public native ArrayList<IDescriptor> GetRole();
 	@Override
-	public native Vector<IDescriptor> GetRating();
+	public native ArrayList<IDescriptor> GetRating();
 	@Override
-	public native Vector<IDescriptor> GetViewpoint();
+	public native ArrayList<IDescriptor> GetViewpoint();
 	@Override
 	public native int GetId();
 	@Override
@@ -47,7 +47,7 @@ public class ContentComponent extends AbstractMPDElement implements
 	
 
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();

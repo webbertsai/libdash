@@ -106,7 +106,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_ProgramInformation_SetMoreI
 /*
  * Class:     net_bitmovin_libdash_mpd_ProgramInformation
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_ProgramInformation_GetAdditionalSubNodes
   (JNIEnv *, jobject);

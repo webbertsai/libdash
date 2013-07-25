@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -15,7 +15,7 @@ public class Subset extends AbstractMPDElement implements ISubset {
 	}
 
 	@Override
-	public native Vector<Integer> Contains();
+	public native ArrayList<Integer> Contains();
 	@Override
 	protected native long initialiseCppClass();
 	@Override
@@ -24,7 +24,7 @@ public class Subset extends AbstractMPDElement implements ISubset {
 	public native void SetSubset(String subset);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 }

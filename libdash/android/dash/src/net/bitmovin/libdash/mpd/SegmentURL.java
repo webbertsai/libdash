@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -23,9 +23,9 @@ public class SegmentURL extends AbstractMPDElement implements ISegmentURL {
 	@Override
 	public native String GetIndexRange();
 	@Override
-	public native ISegment ToMediaSegment(Vector<IBaseUrl> baseurls);
+	public native ISegment ToMediaSegment(ArrayList<IBaseUrl> baseurls);
 	@Override
-	public native ISegment ToIndexSegment(Vector<IBaseUrl> baseurls);
+	public native ISegment ToIndexSegment(ArrayList<IBaseUrl> baseurls);
 	@Override
 	protected native long initialiseCppClass();
 	@Override
@@ -37,7 +37,7 @@ public class SegmentURL extends AbstractMPDElement implements ISegmentURL {
 	public native void    SetIndexRange   (String indexRange);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 	

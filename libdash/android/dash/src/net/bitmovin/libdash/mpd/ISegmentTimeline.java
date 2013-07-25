@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface ISegmentTimeline extends IMPDElement {
-	Vector<ITimeline>   GetTimelines ();
+	ArrayList<ITimeline>   GetTimelines ();
 }

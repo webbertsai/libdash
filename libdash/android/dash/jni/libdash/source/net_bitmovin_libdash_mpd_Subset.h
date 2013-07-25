@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_Subset
  * Method:    Contains
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Subset_Contains
   (JNIEnv *, jobject);
@@ -42,7 +42,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Subset_SetSubset
 /*
  * Class:     net_bitmovin_libdash_mpd_Subset
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Subset_GetAdditionalSubNodes
   (JNIEnv *, jobject);

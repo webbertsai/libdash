@@ -42,7 +42,7 @@ JNIEXPORT jstring JNICALL Java_net_bitmovin_libdash_mpd_SegmentURL_GetIndexRange
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentURL
  * Method:    ToMediaSegment
- * Signature: (Ljava/util/Vector;)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentURL_ToMediaSegment
   (JNIEnv *, jobject, jobject);
@@ -50,7 +50,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentURL_ToMediaSegmen
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentURL
  * Method:    ToIndexSegment
- * Signature: (Ljava/util/Vector;)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentURL_ToIndexSegment
   (JNIEnv *, jobject, jobject);
@@ -106,7 +106,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentURL_SetIndexRange
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentURL
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentURL_GetAdditionalSubNodes
   (JNIEnv *, jobject);

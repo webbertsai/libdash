@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
-import java.util.Vector;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -14,7 +14,7 @@ public class Period extends AbstractMPDElement implements IPeriod {
 	}
 
 	@Override
-	public native Vector<IBaseUrl> GetBaseURLs();
+	public native ArrayList<IBaseUrl> GetBaseURLs();
 
 	@Override
 	public native ISegmentBase GetSegmentBase();
@@ -26,10 +26,10 @@ public class Period extends AbstractMPDElement implements IPeriod {
 	public native ISegmentTemplate GetSegmentTemplate();
 
 	@Override
-	public native Vector<IAdaptationSet> GetAdaptationSets();
+	public native ArrayList<IAdaptationSet> GetAdaptationSets();
 
 	@Override
-	public native Vector<ISubset> GetSubsets();
+	public native ArrayList<ISubset> GetSubsets();
 
 	@Override
 	public native String GetXlinkHref();
@@ -70,7 +70,7 @@ public class Period extends AbstractMPDElement implements IPeriod {
 	
 
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 

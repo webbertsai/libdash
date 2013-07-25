@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -16,9 +16,9 @@ public class Representation extends RepresentationBase implements
 	}
 
 	@Override
-	public native Vector<IBaseUrl> GetBaseURLs();
+	public native ArrayList<IBaseUrl> GetBaseURLs();
 	@Override
-	public native Vector<ISubRepresentation> GetSubRepresentations();
+	public native ArrayList<ISubRepresentation> GetSubRepresentations();
 	@Override
 	public native ISegmentBase GetSegmentBase();
 	@Override
@@ -32,9 +32,9 @@ public class Representation extends RepresentationBase implements
 	@Override
 	public native int GetQualityRanking();
 	@Override
-	public native Vector<String> GetDependencyId();
+	public native ArrayList<String> GetDependencyId();
 	@Override
-	public native Vector<String> GetMediaStreamStructureId();
+	public native ArrayList<String> GetMediaStreamStructureId();
 	@Override
 	protected native long initialiseCppClass();
 	@Override
@@ -52,7 +52,7 @@ public class Representation extends RepresentationBase implements
 	public native void    SetMediaStreamStructureId   (String mediaStreamStructureId);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 }

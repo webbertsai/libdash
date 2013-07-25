@@ -42,7 +42,7 @@ JNIEXPORT jstring JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_Getbitst
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    ToInitializationSegment
- * Signature: (Ljava/util/Vector;Ljava/lang/String;I)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;Ljava/lang/String;I)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_ToInitializationSegment
   (JNIEnv *, jobject, jobject, jstring, jint);
@@ -50,7 +50,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_ToInitia
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    ToBitstreamSwitchingSegment
- * Signature: (Ljava/util/Vector;Ljava/lang/String;I)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;Ljava/lang/String;I)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_ToBitstreamSwitchingSegment
   (JNIEnv *, jobject, jobject, jstring, jint);
@@ -58,7 +58,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_ToBitstr
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    GetMediaSegmentFromNumber
- * Signature: (Ljava/util/Vector;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetMediaSegmentFromNumber
   (JNIEnv *, jobject, jobject, jstring, jint, jint);
@@ -66,7 +66,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetMedia
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    GetIndexSegmentFromNumber
- * Signature: (Ljava/util/Vector;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetIndexSegmentFromNumber
   (JNIEnv *, jobject, jobject, jstring, jint, jint);
@@ -74,7 +74,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetIndex
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    GetMediaSegmentFromTime
- * Signature: (Ljava/util/Vector;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetMediaSegmentFromTime
   (JNIEnv *, jobject, jobject, jstring, jint, jint);
@@ -82,7 +82,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetMedia
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    GetIndexSegmentFromTime
- * Signature: (Ljava/util/Vector;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
+ * Signature: (Ljava/util/ArrayList;Ljava/lang/String;II)Lnet/bitmovin/libdash/mpd/ISegment;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetIndexSegmentFromTime
   (JNIEnv *, jobject, jobject, jstring, jint, jint);
@@ -138,7 +138,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_SetBitstrea
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentTemplate
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentTemplate_GetAdditionalSubNodes
   (JNIEnv *, jobject);

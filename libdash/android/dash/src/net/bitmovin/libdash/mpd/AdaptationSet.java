@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -15,17 +15,17 @@ public class AdaptationSet extends RepresentationBase implements IAdaptationSet 
 	}
 
 	@Override
-	public native Vector<IDescriptor> GetAccessibility();
+	public native ArrayList<IDescriptor> GetAccessibility();
 	@Override
-	public native Vector<IDescriptor> GetRole();
+	public native ArrayList<IDescriptor> GetRole();
 	@Override
-	public native Vector<IDescriptor> GetRating();
+	public native ArrayList<IDescriptor> GetRating();
 	@Override
-	public native Vector<IDescriptor> GetViewpoint();
+	public native ArrayList<IDescriptor> GetViewpoint();
 	@Override
-	public native Vector<IContentComponent> GetContentComponent();
+	public native ArrayList<IContentComponent> GetContentComponent();
 	@Override
-	public native Vector<IBaseUrl> GetBaseURLs();
+	public native ArrayList<IBaseUrl> GetBaseURLs();
 	@Override
 	public native ISegmentBase GetSegmentBase();
 	@Override
@@ -33,7 +33,7 @@ public class AdaptationSet extends RepresentationBase implements IAdaptationSet 
 	@Override
 	public native ISegmentTemplate GetSegmentTemplate();
 	@Override
-	public native Vector<IRepresentation> GetRepresentation();
+	public native ArrayList<IRepresentation> GetRepresentation();
 	@Override
 	public native String GetXlinkHref();
 	@Override
@@ -116,7 +116,7 @@ public class AdaptationSet extends RepresentationBase implements IAdaptationSet 
 	public native void    SetBitstreamSwitching       (boolean value);
 
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();

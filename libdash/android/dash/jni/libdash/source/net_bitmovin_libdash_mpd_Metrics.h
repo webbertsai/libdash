@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_Metrics
  * Method:    GetReportings
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Metrics_GetReportings
   (JNIEnv *, jobject);
@@ -18,7 +18,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Metrics_GetReportings
 /*
  * Class:     net_bitmovin_libdash_mpd_Metrics
  * Method:    GetRanges
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Metrics_GetRanges
   (JNIEnv *, jobject);
@@ -74,7 +74,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Metrics_SetMetrics
 /*
  * Class:     net_bitmovin_libdash_mpd_Metrics
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Metrics_GetAdditionalSubNodes
   (JNIEnv *, jobject);

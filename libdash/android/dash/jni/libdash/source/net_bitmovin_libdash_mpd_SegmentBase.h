@@ -103,6 +103,38 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentBase_SetIndexRange
 JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentBase_SetIndexRangeExact
   (JNIEnv *, jobject, jboolean);
 
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentBase
+ * Method:    GetAdditionalSubNodes
+ * Signature: ()Ljava/util/ArrayList;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentBase_GetAdditionalSubNodes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentBase
+ * Method:    GetRawAttributes
+ * Signature: ()Ljava/util/TreeMap;
+ */
+JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentBase_GetRawAttributes
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentBase
+ * Method:    initialiseCppClass
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_net_bitmovin_libdash_mpd_SegmentBase_initialiseCppClass
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     net_bitmovin_libdash_mpd_SegmentBase
+ * Method:    destoryCppClass
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentBase_destoryCppClass
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

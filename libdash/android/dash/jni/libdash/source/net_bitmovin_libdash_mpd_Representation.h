@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_Representation
  * Method:    GetBaseURLs
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetBaseURLs
   (JNIEnv *, jobject);
@@ -18,7 +18,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetBaseUR
 /*
  * Class:     net_bitmovin_libdash_mpd_Representation
  * Method:    GetSubRepresentations
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetSubRepresentations
   (JNIEnv *, jobject);
@@ -74,7 +74,7 @@ JNIEXPORT jint JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetQualityRa
 /*
  * Class:     net_bitmovin_libdash_mpd_Representation
  * Method:    GetDependencyId
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetDependencyId
   (JNIEnv *, jobject);
@@ -82,7 +82,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetDepend
 /*
  * Class:     net_bitmovin_libdash_mpd_Representation
  * Method:    GetMediaStreamStructureId
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetMediaStreamStructureId
   (JNIEnv *, jobject);
@@ -186,7 +186,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Representation_SetMediaStre
 /*
  * Class:     net_bitmovin_libdash_mpd_Representation
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Representation_GetAdditionalSubNodes
   (JNIEnv *, jobject);

@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentList
  * Method:    GetSegmentURLs
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentList_GetSegmentURLs
   (JNIEnv *, jobject);
@@ -74,7 +74,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SegmentList_SetXlinkActuate
 /*
  * Class:     net_bitmovin_libdash_mpd_SegmentList
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SegmentList_GetAdditionalSubNodes
   (JNIEnv *, jobject);

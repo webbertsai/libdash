@@ -1,9 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface ISegmentList extends IMultipleSegmentBase {
-	Vector<ISegmentURL>   GetSegmentURLs  ();
+	ArrayList<ISegmentURL>   GetSegmentURLs  ();
     String                GetXlinkHref    ();
     String                GetXlinkActuate ();
 }

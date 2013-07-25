@@ -18,7 +18,7 @@ JNIEXPORT jint JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetLevel
 /*
  * Class:     net_bitmovin_libdash_mpd_SubRepresentation
  * Method:    GetDependencyLevel
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetDependencyLevel
   (JNIEnv *, jobject);
@@ -34,7 +34,7 @@ JNIEXPORT jint JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetBandWi
 /*
  * Class:     net_bitmovin_libdash_mpd_SubRepresentation
  * Method:    GetContentComponent
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetContentComponent
   (JNIEnv *, jobject);
@@ -90,7 +90,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_SetConten
 /*
  * Class:     net_bitmovin_libdash_mpd_SubRepresentation
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_SubRepresentation_GetAdditionalSubNodes
   (JNIEnv *, jobject);

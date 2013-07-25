@@ -10,7 +10,7 @@ extern "C" {
 /*
  * Class:     net_bitmovin_libdash_mpd_Period
  * Method:    GetBaseURLs
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Period_GetBaseURLs
   (JNIEnv *, jobject);
@@ -42,7 +42,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Period_GetSegmentTemplat
 /*
  * Class:     net_bitmovin_libdash_mpd_Period
  * Method:    GetAdaptationSets
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Period_GetAdaptationSets
   (JNIEnv *, jobject);
@@ -50,7 +50,7 @@ JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Period_GetAdaptationSets
 /*
  * Class:     net_bitmovin_libdash_mpd_Period
  * Method:    GetSubsets
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Period_GetSubsets
   (JNIEnv *, jobject);
@@ -218,7 +218,7 @@ JNIEXPORT void JNICALL Java_net_bitmovin_libdash_mpd_Period_SetBitstreamSwitchin
 /*
  * Class:     net_bitmovin_libdash_mpd_Period
  * Method:    GetAdditionalSubNodes
- * Signature: ()Ljava/util/Vector;
+ * Signature: ()Ljava/util/ArrayList;
  */
 JNIEXPORT jobject JNICALL Java_net_bitmovin_libdash_mpd_Period_GetAdditionalSubNodes
   (JNIEnv *, jobject);

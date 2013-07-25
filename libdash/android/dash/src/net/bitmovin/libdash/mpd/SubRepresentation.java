@@ -1,7 +1,7 @@
 package net.bitmovin.libdash.mpd;
 
 import java.util.TreeMap;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import net.bitmovin.libdash.xml.INode;
 
@@ -18,11 +18,11 @@ public class SubRepresentation extends RepresentationBase implements
 	@Override
 	public native int GetLevel();
 	@Override
-	public native Vector<Integer> GetDependencyLevel();
+	public native ArrayList<Integer> GetDependencyLevel();
 	@Override
 	public native int GetBandWidth();
 	@Override
-	public native Vector<String> GetContentComponent();
+	public native ArrayList<String> GetContentComponent();
 	@Override
 	protected native long initialiseCppClass();
 	@Override
@@ -34,7 +34,7 @@ public class SubRepresentation extends RepresentationBase implements
 	public native void    SetContentComponent         (String contentComponent);
 	
 	@Override
-	public native Vector<INode> GetAdditionalSubNodes();
+	public native ArrayList<INode> GetAdditionalSubNodes();
 	@Override
 	public native TreeMap<String, String> GetRawAttributes();
 }

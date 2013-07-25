@@ -1,10 +1,10 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface IBaseUrl extends IMPDElement {
 	String 		GetUrl               ();
     String 		GetServiceLocation   ();
     String 		GetByteRange         ();
-    ISegment	ToMediaSegment      (Vector<IBaseUrl> baseurls);
+    ISegment	ToMediaSegment      (ArrayList<IBaseUrl> baseurls);
 }

@@ -1,9 +1,9 @@
 package net.bitmovin.libdash.mpd;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public interface IMetrics extends IMPDElement {
-	Vector<IDescriptor>   GetReportings   ();
-    Vector<IRange>        GetRanges       ();
+	ArrayList<IDescriptor>   GetReportings   ();
+	ArrayList<IRange>        GetRanges       ();
     String                GetMetrics      ();
 }
