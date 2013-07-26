@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import android.util.Log;
 import net.bitmovin.libdash.DASHManager;
 import net.bitmovin.libdash.mpd.IAdaptationSet;
+import net.bitmovin.libdash.mpd.IBaseUrl;
 import net.bitmovin.libdash.mpd.IMPD;
 import net.bitmovin.libdash.mpd.IPeriod;
 import net.bitmovin.libdash.mpd.IRepresentation;
+import net.bitmovin.libdash.mpd.ISegment;
+import net.bitmovin.libdash.mpd.ISegmentBase;
+import net.bitmovin.libdash.mpd.ISegmentList;
+import net.bitmovin.libdash.mpd.ISegmentURL;
 import junit.framework.TestCase;
 
 public class DashTest extends TestCase {
@@ -126,6 +131,19 @@ public class DashTest extends TestCase {
 		Log.d(TAG, "GetMaxPlayoutRate:" + representation.GetMaxPlayoutRate               ());
 		Log.d(TAG, "HasCodingDependency:" + representation.HasCodingDependency             ());
 		Log.d(TAG, "GetScanType:" + representation.GetScanType                     ());
+		
+		ArrayList<IBaseUrl> baseUrl = mpd.GetBaseUrls();
+		Log.d(TAG, "baseUrl:" + baseUrl);
+		ISegmentBase segmentBase = representation.GetSegmentBase();
+		Log.d(TAG, "segmentBase:" + segmentBase);
+		ISegmentList segmentList = representation.GetSegmentList();
+		Log.d(TAG, "segmentList:" + segmentList);
+		ArrayList<ISegmentURL> segmentUrls = segmentList.GetSegmentURLs();
+		Log.d(TAG, "segmentUrls:" + segmentUrls);
+		Log.d(TAG, "segmentUrls.get(0):" + segmentUrls.get(0));
+		ISegment segment = segmentUrls.get(0).ToMediaSegment(baseUrl);
+		Log.d(TAG, "segment:" + segment);
+		// Log.d(TAG, "segment.StartDownload():" + segment.StartDownload());
 			
 		toTest.destroy();
 	}
