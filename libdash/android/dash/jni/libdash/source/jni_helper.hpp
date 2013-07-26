@@ -125,7 +125,7 @@ std::vector<toCastToType*> convertJArrayListToStdVector(JNIEnv *env, jobject toC
     int sizeCast = size;
     for (int ind = 0; ind < sizeCast; ++ind)
     {
-        jobject work = env->CallObjectMethod(toCast, env->GetMethodID(clazz_vector, "get", "()Ljava/lang/Object;"));
+        jobject work = env->CallObjectMethod(toCast, env->GetMethodID(clazz_vector, "get", "(I)Ljava/lang/Object;"), ind);
         toCastToType *workCasted(getClassPtr<toCastToType>(env, work));
         result.push_back(workCasted);
     }
