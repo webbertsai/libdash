@@ -13,6 +13,7 @@ import net.bitmovin.libdash.mpd.ISegment;
 import net.bitmovin.libdash.mpd.ISegmentBase;
 import net.bitmovin.libdash.mpd.ISegmentList;
 import net.bitmovin.libdash.mpd.ISegmentURL;
+import net.bitmovin.libdash.mpd.IURLType;
 import junit.framework.TestCase;
 
 public class DashTest extends TestCase {
@@ -27,7 +28,6 @@ public class DashTest extends TestCase {
 		IMPD mpd = toTest.Open("http://www-itec.uni-klu.ac.at/ftp/datasets/mmsys12/BigBuckBunny/bunny_2s_480p_only/bunny_Desktop.mpd");
 		
 		Log.d(TAG, "GetProgramInformations:" + mpd.GetProgramInformations          ());
-		Log.d(TAG, "GetBaseUrls:" + mpd.GetBaseUrls                     ());
 		Log.d(TAG, "GetLocations:" + mpd.GetLocations                    ());
 		Log.d(TAG, "GetPeriods:" + mpd.GetPeriods                      ());
 		Log.d(TAG, "GetMetrics:" + mpd.GetMetrics                      ());
@@ -103,6 +103,7 @@ public class DashTest extends TestCase {
 		
 		IRepresentation representation = adaptationSet.GetRepresentation().get(0);
 		
+		Log.d(TAG, "representation (IRepresentation):" + representation);
 		Log.d(TAG, "GetBaseURLs:" + representation.GetBaseURLs                 ());
 		Log.d(TAG, "GetSubRepresentations:" + representation.GetSubRepresentations       ());
 		Log.d(TAG, "GetSegmentBase:" + representation.GetSegmentBase              ());
@@ -114,6 +115,7 @@ public class DashTest extends TestCase {
 		Log.d(TAG, "GetDependencyId:" + representation.GetDependencyId             ());
 		Log.d(TAG, "GetMediaStreamStructureId:" + representation.GetMediaStreamStructureId   ());
 		
+		Log.d(TAG, "representation (IRepresentationBase)");
 		Log.d(TAG, "GetFramePacking:" + representation.GetFramePacking                 ());
 		Log.d(TAG, "GetAudioChannelConfiguration:" + representation.GetAudioChannelConfiguration    ());
 		Log.d(TAG, "GetContentProtection:" + representation.GetContentProtection            ());
@@ -132,6 +134,8 @@ public class DashTest extends TestCase {
 		Log.d(TAG, "HasCodingDependency:" + representation.HasCodingDependency             ());
 		Log.d(TAG, "GetScanType:" + representation.GetScanType                     ());
 		
+		Log.d(TAG, "representation.GetScanType:" + representation.GetScanType                     ());
+		
 		ArrayList<IBaseUrl> baseUrl = mpd.GetBaseUrls();
 		Log.d(TAG, "baseUrl:" + baseUrl);
 		ISegmentBase segmentBase = representation.GetSegmentBase();
@@ -144,6 +148,27 @@ public class DashTest extends TestCase {
 		ISegment segment = segmentUrls.get(0).ToMediaSegment(baseUrl);
 		Log.d(TAG, "segment:" + segment);
 		Log.d(TAG, "segment.StartDownload():" + segment.StartDownload());
+	
+		class Helper {
+			public String byteArrayToHex(byte[] a) {
+			   StringBuilder sb = new StringBuilder();
+			   for(byte b: a)
+			      sb.append(String.format("%02x", b&0xff));
+			   return sb.toString();
+			}
+		}
+		Log.d(TAG, "segment.Read(256):" + new Helper().byteArrayToHex(segment.Read(256)));
+		
+		Log.d(TAG, "segmentBase.GetIndexRange():" + segmentBase.GetIndexRange());
+		Log.d(TAG, "segmentBase.GetRepresentationIndex():" + segmentBase.GetRepresentationIndex());
+		Log.d(TAG, "segmentBase.HasIndexRangeExact():" + segmentBase.HasIndexRangeExact());  
+		Log.d(TAG, "segmentBase.GetTimescale():" + segmentBase.GetTimescale());
+		Log.d(TAG, "segmentBase.GetPresentationTimeOffset():" + segmentBase.GetPresentationTimeOffset());
+		Log.d(TAG, "segmentBase.GetInitialization():" + segmentBase.GetInitialization());
+		
+		IURLType urlType = segmentBase.GetInitialization();
+		Log.d(TAG, "urlType:" + urlType);
+		Log.d(TAG, "representation.GetSegmentBase().GetInitialization().ToSegment(baseUrl):" + representation.GetSegmentBase().GetInitialization().ToSegment(baseUrl));	
 			
 		toTest.destroy();
 	}

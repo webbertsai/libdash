@@ -386,6 +386,19 @@ jstring prefix##method##suffix(JNIEnv *env, jobject obj) \
     return object_cast;\
 }
 
+#define CALL_METHOD_RETURN_OBJECTPTR_WITH_DYNAMICCAST(prefix, method, cppReturnClassType, cppClassType, javaClassType) jobject prefix##method(JNIEnv *env, jobject obj) \
+{   \
+    LOCAL_CLASS* classPtr(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj));\
+    if (classPtr == 0)\
+    {\
+        return 0;\
+    }\
+    const cppReturnClassType *toCast(classPtr->method());\
+    jobject object_cast = jni_helper::convertCppInstanceToJObject(env, dynamic_cast<const cppClassType*>(toCast), javaClassType, 0); \
+\
+    return object_cast;\
+}
+
 #define INHERT_ABSTRACTMPDELEMENT(prefix) \
 CALL_METHOD_RETURN_OBJECTPTRVECTOR(prefix, GetAdditionalSubNodes, dash::xml::INode, "net/bitmovin/libdash/xml/Node") \
 \
