@@ -14,27 +14,77 @@ namespace jni_helper
 {
 
 
-
+/**
+ * @brief createJString creates a jstring from a c string.
+ * @param env
+ * @param cStr which has to be \0 terminated
+ * @return a java.lang.String in utf8
+ */
 jstring createJString(JNIEnv *env, const char* cStr);
+/**
+ * @brief convertJStringToStdString converts a jstring to a std::string
+ * @param env
+ * @param toCast a java.lang.String in utf8
+ * @return a std::string in the length of java.lang.String.length()
+ */
 std::string convertJStringToStdString(JNIEnv *env, jstring &toCast);
+/**
+ * @brief convertStdStringToJString converts a std::string to a jstring
+ * @param env
+ * @param toCast
+ * @return a java.lang.String in utf8
+ */
 jstring convertStdStringToJString(JNIEnv *env, const std::string &toCast);
+/**
+ * @brief convertJEnumToInt converts an enum to an int
+ * @param env
+ * @param toCastEnum object has to extend java.lang.Enum<?>
+ * @return result of java.lang.Enum<?>.ordinal()
+ */
 int convertJEnumToInt(JNIEnv *env, jobject &toCastEnum);
+/**
+ * @brief createJavaArrayList creates a java.util.ArrayList<?>; calls empty constructor.
+ * @param env
+ * @param resultClass resulting java class for further method calls
+ * @param resultObject resulting java object
+ */
 void createJavaArrayList(JNIEnv *env, jclass *resultClass, jobject *resultObject);
+/**
+ * @brief createJavaMap creates a java.util.TreeMap<?>; calls empty constructor.
+ * @param env
+ * @param resultClass resulting java class for further method calls
+ * @param resultObject resulting java object
+ */
 void createJavaMap(JNIEnv *env, jclass *resultClass, jobject *resultObject);
 
-
-template <class classType>
-jlong convertPtrToJLong(const classType *ptr)
+/**
+ * @brief convertPtrToJLong converts a c++-pointer to a 64bit jlong
+ * @param ptr may be NULL
+ * @return
+ */
+template <class classType> jlong convertPtrToJLong(const classType *ptr)
 {
     return reinterpret_cast<jlong>(ptr);
 }
 
-template <class classType>
+
+/**
+ * @brief convertJLongToPtr converts a 64bit jlong to a c++-ptr
+ * @param ptr may be 0
+ * @return
+ */template <class classType>
 classType* convertJLongToPtr(const jlong &ptr)
 {
     return reinterpret_cast<classType*>(ptr);
 }
 
+/**
+ * @brief createObject creates a java-object from a c++-ptr
+ * @param env
+ * @param ptr may be NULL
+ * @param className describes the java class - eg. "java.lang.Object"
+ * @return
+ */
 template <class classType>
 jobject createObject(JNIEnv *env, const classType *ptr, const char* className)
 {
@@ -45,6 +95,12 @@ jobject createObject(JNIEnv *env, const classType *ptr, const char* className)
     return result;
 }
 
+/**
+ * @brief getClassPtr returns the c++-pointer of a java class
+ * @param env
+ * @param obj has to derive net.bitmovin.libdash.helper.CppClassInstance
+ * @return casted pointer from java-class
+ */
 template <class classType>
 classType* getClassPtr(JNIEnv *env, jobject &obj)
 {
@@ -59,12 +115,21 @@ classType* getClassPtr(JNIEnv *env, jobject &obj)
     return convertJLongToPtr<classType>(cppThis);
 }
 
+/**
+ * @brief createAndCastClass created a c++-class and converts the pointer to a 64bit jlong
+ * @return
+ */
 template <class classType>
 jlong createAndCastClass()
 {
     return convertPtrToJLong(new classType());
 }
 
+/**
+ * @brief destroyInstance gets c++-pointer from java-instance and frees memory of class
+ * @param env
+ * @param obj has to derive net.bitmovin.libdash.helper.CppClassInstance
+ */
 template <class classType>
 void destroyInstance(JNIEnv *env, jobject &obj)
 {
@@ -79,6 +144,14 @@ void destroyInstance(JNIEnv *env, jobject &obj)
     env->SetLongField(obj, fid, 0);
 }
 
+/**
+ * @brief convertCppInstanceToJObject converts a c++-class to a java object.
+ * @param env
+ * @param toCast may be 0
+ * @param javaClass describes the java class, eg. "java.lang.Object". has to derive net.bitmovin.libdash.helper.CppClassInstance
+ * @param resultClass java class for future method use. if NULL doesn't get filled.
+ * @return a instance of the javaClass
+ */
 template <class classType>
 jobject convertCppInstanceToJObject(JNIEnv *env, classType *toCast, const char *javaClass, jclass *resultClass = 0)
 {
@@ -102,18 +175,39 @@ jobject convertCppInstanceToJObject(JNIEnv *env, classType *toCast, const char *
     return object_cast;
 }
 
+/**
+ * @brief addToJavaArrayList adds an object to a java.util.ArrayList<?>
+ * @param env
+ * @param vector_class class-descriptor of the java.util.ArrayList<?>
+ * @param vector_obj instance of the java.util.ArrayList<?>
+ * @param toAdd instance of the java object to add.
+ */
 template <typename addType>
 void addToJavaArrayList(JNIEnv *env, const jclass &vector_class, const jobject &vector_obj, const addType& toAdd)
 {
     env->CallBooleanMethod(vector_obj, env->GetMethodID(vector_class, "add", "(Ljava/lang/Object;)Z"), toAdd);\
 }
 
+/**
+ * @brief addToJavaMap adds a key and value to a java.util.TreeMap<?>
+ * @param env
+ * @param map_class class-descriptor of the java.util.TreeMap<?>
+ * @param map_obj instance of the java.util.TreeMap<?>
+ * @param toAddA instance of the java key-object to add.
+ * @param toAddB instance of the java value-object to add.
+ */
 template <typename addTypeA, typename addTypeB>
 void addToJavaMap(JNIEnv *env, const jclass &map_class, const jobject &map_obj, const addTypeA& toAddA, const addTypeB& toAddB)
 {
     env->CallObjectMethod(map_obj, env->GetMethodID(map_class, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"), toAddA, toAddB);\
 }
 
+/**
+ * @brief convertJArrayListToStdVector converts a java.util.ArrayList<?> to a std::vector<toCastToType>
+ * @param env
+ * @param toCast has to derive java.util.ArrayList<?>
+ * @return
+ */
 template <class toCastToType>
 std::vector<toCastToType*> convertJArrayListToStdVector(JNIEnv *env, jobject toCast)
 {
@@ -132,6 +226,13 @@ std::vector<toCastToType*> convertJArrayListToStdVector(JNIEnv *env, jobject toC
     return result;
 }
 
+/**
+ * @brief convertStdVectorToJavaArrayList converts a std::vector<toCastToType> to a java.util.ArrayList<?>
+ * @param env
+ * @param javaClassType class descriptor of java.util.ArrayList<?>. values of javaClassType have to derive net.bitmovin.libdash.helper.CppClassInstance
+ * @param toCast
+ * @return java.util.ArrayList<?>
+ */
 template <class classType>
 jobject convertStdVectorToJavaArrayList(JNIEnv *env, const char *javaClassType, const std::vector<classType*>& toCast)
 {
