@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import net.bitmovin.libdash.metrics.HTTPTransactionType;
 import net.bitmovin.libdash.network.AbstractChunk;
+import net.bitmovin.libdash.network.IConnection;
+import net.bitmovin.libdash.network.IDownloadObserver;
 
 public class Segment extends AbstractChunk implements ISegment {
 
@@ -53,6 +55,7 @@ public class Segment extends AbstractChunk implements ISegment {
 	public native void EndByte(int endByte);
 	@Override
 	public native void HasByteRange(boolean hasByteRange);
+
 	@Override
 	protected native long initialiseCppClass();
 	@Override

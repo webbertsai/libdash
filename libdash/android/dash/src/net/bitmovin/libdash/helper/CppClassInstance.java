@@ -14,7 +14,7 @@ public abstract class CppClassInstance {
 	}
 	
 	protected CppClassInstance(long cppThis) {
-		Log.d(TAG, "CppClassInstance(long) cppThis:" + cppThis);
+		// Log.d(TAG, "CppClassInstance(long) cppThis:" + cppThis);
 		
 		this.cppThis = cppThis;
 		if (cppThis == 0)

@@ -66,3 +66,4 @@ jbyteArray Java_net_bitmovin_libdash_network_AbstractChunk_##method(JNIEnv *env,
 
 CALL_METHOD_PEEK_OR_READ(Read)
 CALL_METHOD_PEEK_OR_READ(Peek)
+

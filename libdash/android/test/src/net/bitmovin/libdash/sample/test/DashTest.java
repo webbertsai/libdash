@@ -143,7 +143,7 @@ public class DashTest extends TestCase {
 		Log.d(TAG, "segmentUrls.get(0):" + segmentUrls.get(0));
 		ISegment segment = segmentUrls.get(0).ToMediaSegment(baseUrl);
 		Log.d(TAG, "segment:" + segment);
-		// Log.d(TAG, "segment.StartDownload():" + segment.StartDownload());
+		Log.d(TAG, "segment.StartDownload():" + segment.StartDownload());
 			
 		toTest.destroy();
 	}

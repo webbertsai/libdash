@@ -24,25 +24,19 @@ public abstract class AbstractChunk extends CppClassInstance implements
 
 	@Override
 	public native boolean StartDownload();
-
 	@Override
 	public native boolean StartDownload(IConnection connection);
-
 	@Override
 	public native void AbortDownload();
-	
 	@Override
 	public native byte[] Read(int len);
-
 	@Override
 	public native byte[] Peek(int len);
-
 	@Override
 	public native void AttachDownloadObserver(IDownloadObserver observer);
-
 	@Override
 	public native void DetachDownloadObserver(IDownloadObserver observer);
-	
+
 	public native void NotifyDownloadRateChanged ();
 
 }

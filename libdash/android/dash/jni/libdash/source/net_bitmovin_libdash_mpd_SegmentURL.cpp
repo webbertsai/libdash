@@ -27,7 +27,7 @@ jobject Java_net_bitmovin_libdash_mpd_SegmentURL_ToMediaSegment(JNIEnv *env, job
 {
     const std::vector<dash::mpd::IBaseUrl *>& baseurls(jni_helper::convertJArrayListToStdVector<dash::mpd::IBaseUrl>(env, arg0));
     dash::mpd::ISegment* result(jni_helper::getClassPtr<LOCAL_CLASS>(env, obj)->ToMediaSegment(baseurls));
-    return jni_helper::createObject(env, result, "net/bitmovin/libdash/mpd/Segment");
+    return jni_helper::createObject(env, dynamic_cast<dash::mpd::Segment*>(result), "net/bitmovin/libdash/mpd/Segment");
 }
 
 
