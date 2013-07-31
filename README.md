@@ -94,7 +94,7 @@ Prerequisite: libdash must be built as described in the previous section.
 8. wget http://www.cmake.org/files/v2.8/cmake-2.8.11.2-Linux-i386.sh
 9. chmod a+x cmake-2.8.11.2-Linux-i386.sh
 10. ./cmake-2.8.11.2-Linux-i386.sh
-11. ./cmake-2.8.11.2-Linux-i386/bin/cmake ../
+11. cmake ./cmake-2.8.11.2-Linux-i386/bin/cmake ../
 12. make
 13. ./qtsampleplayer
 
